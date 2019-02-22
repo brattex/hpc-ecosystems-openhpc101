@@ -46,18 +46,19 @@ config.vm.network "forwarded_port", guest: 22, host: 2223, id: "ssh"
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
+  config.vm.synced_folder "
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  # config.vm.provider "virtualbox" do |vb|
+  config.vm.provider "virtualbox" do |vb|
   #   # Display the VirtualBox GUI when booting the machine
-  #   vb.gui = true
+    vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
-  #   vb.memory = "1024"
-  # end
+    vb.memory = "1024"
+  end
   #
   # View the documentation for the provider you are using for more
   # information on available options.
@@ -69,4 +70,21 @@ config.vm.network "forwarded_port", guest: 22, host: 2223, id: "ssh"
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
+
+config.vm.provision "shell", inline: <<-SHELL
+    sudo yum update -y && \
+    # sudo apt-get -y upgrade && \
+    sudo yum -y install \
+    tmux vim \
+#      build-essential git pkg-config zip unzip software-properties-common \
+#      python-pip python-dev \
+#      libgmp-dev gcc-multilib valgrind openmpi-bin openmpi-doc libopenmpi-dev \
+#      portmap rpcbind libcurl4-openssl-dev bzip2 imagemagick libmagickcore-dev \
+#      libssl-dev libffi6 libffi-dev llvm
+
+#    sudo pip install --upgrade pip
+#    sudo pip install --upgrade requests future cryptography pyopenssl ndg-httpsclient #pyasn1 nelson
+  SHELL
+end
+
 end
