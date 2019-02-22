@@ -75,7 +75,7 @@ config.vm.provision "shell", inline: <<-SHELL
     sudo yum update -y && \
     # sudo apt-get -y upgrade && \
     sudo yum -y install \
-    tmux vim \
+    tmux vim 
 #      build-essential git pkg-config zip unzip software-properties-common \
 #      python-pip python-dev \
 #      libgmp-dev gcc-multilib valgrind openmpi-bin openmpi-doc libopenmpi-dev \
