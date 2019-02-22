@@ -86,5 +86,3 @@ config.vm.provision "shell", inline: <<-SHELL
 #    sudo pip install --upgrade requests future cryptography pyopenssl ndg-httpsclient #pyasn1 nelson
   SHELL
 end
-
-end
