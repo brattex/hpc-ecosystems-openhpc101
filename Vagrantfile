@@ -46,13 +46,13 @@ config.vm.network "forwarded_port", guest: 22, host: 2223, id: "ssh"
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
-  config.vm.synced_folder "
+  # config.vm.synced_folder "
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  config.vm.provider "virtualbox" do |vb|
+config.vm.provider "virtualbox" do |vb|
   #   # Display the VirtualBox GUI when booting the machine
     vb.gui = true
   #
@@ -74,8 +74,7 @@ config.vm.network "forwarded_port", guest: 22, host: 2223, id: "ssh"
 config.vm.provision "shell", inline: <<-SHELL
     sudo yum update -y && \
     # sudo apt-get -y upgrade && \
-    sudo yum -y install \
-    tmux vim 
+    sudo yum -y install tmux vim 
 #      build-essential git pkg-config zip unzip software-properties-common \
 #      python-pip python-dev \
 #      libgmp-dev gcc-multilib valgrind openmpi-bin openmpi-doc libopenmpi-dev \
