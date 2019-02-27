@@ -4,38 +4,10 @@
 https://github.com/openhpc/ohpc
 
 
-<!----- Conversion time: 0.689 seconds.
-
-
-Using this Markdown file:
-
-1. Cut and paste this output into your source file.
-2. See the notes and action items below regarding this conversion run.
-3. Check the rendered output (headings, lists, code blocks, tables) for proper
-   formatting and use a linkchecker before you publish this page.
-
-Conversion notes:
-
-* Docs to Markdown version 1.0β15
-* Wed Feb 27 2019 03:51:13 GMT-0800 (PST)
-* Source doc: https://docs.google.com/open?id=1Aeez_p2ebRwVGbIh5KVImHIzmNWfE_P2f5M2tK1jAIg
-* This is a partial selection. Check to make sure intra-doc links work.
-
-WARNING:
-You have 3 H1 headings. You may want to use the "H1 -> H2" option to demote all headings by one level.
-
------>
-
-
-<p style="color: red; font-weight: bold">>>>>>  gd2md-html alert:  ERRORs: 0; WARNINGs: 1; ALERTS: 0.</p>
-<ul style="color: red; font-weight: bold"><li>See top comment block for details on ERRORs and WARNINGs. <li>In the converted Markdown or HTML, search for inline alerts that start with >>>>>  gd2md-html alert:  for specific instances that need correction.</ul>
-
-<p style="color: red; font-weight: bold">Links to alert messages:</p>
-<p style="color: red; font-weight: bold">>>>>> PLEASE check and correct alert issues and delete this message and the inline alerts.<hr></p>
 
 
 
-# HOWTO: HPC Ecosystems OpenHPC Workshop setup
+## HOWTO: HPC Ecosystems OpenHPC Workshop setup
 
 Bryan Johnston
 
@@ -47,7 +19,7 @@ March 2019
 
 
 
-# Introduction
+## Introduction
 
 This document will guide you through setting up a test environment for the HPC Ecosystems OpenHPC workshop.
 
@@ -62,10 +34,10 @@ _* results may vary_
 
 
 
-# Install and prepare VM through Vagrant
+## Install and prepare VM through Vagrant
 
 
-## Install Vagrant
+### Install Vagrant
 
 
 
@@ -90,7 +62,7 @@ Download the HPC Ecosystems Vagrantfile
 
 
 
-# Install and prepare OpenHPC
+## Install and prepare OpenHPC
 
 
 
@@ -106,5 +78,3 @@ The base image template is named **input.local** \
     4. Change all parameters after the "-" symbol in the configuration file
     5. **NOTE: You must carefully plan your system design before making changes to this file - a few <span style="text-decoration:underline;">minutes</span> of planning will save you <span style="text-decoration:underline;">days</span> of debugging! \
 **
-
-<!-- Docs to Markdown version 1.0β15 -->
