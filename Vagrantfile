@@ -72,9 +72,11 @@ config.vm.provider "virtualbox" do |vb|
   # SHELL
 
 config.vm.provision "shell", inline: <<-SHELL
-    sudo yum update -y && \
     # sudo apt-get -y upgrade && \
-    sudo yum -y install tmux vim 
+    #sudo yum install vim -y
+	sudo yum install vim git tmux -y
+	sudo yum update -y
+    
 #      build-essential git pkg-config zip unzip software-properties-common \
 #      python-pip python-dev \
 #      libgmp-dev gcc-multilib valgrind openmpi-bin openmpi-doc libopenmpi-dev \
