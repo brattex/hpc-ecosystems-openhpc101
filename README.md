@@ -18,7 +18,7 @@ March 2019
 
 This document will guide you through setting up a test environment for the HPC Ecosystems OpenHPC workshop.
 
-This involve deploying an OpenHPC-ready Virtualbox VM using Vagrant. The sections of the guide include:
+This involves deploying an OpenHPC-ready Virtualbox VM using Vagrant. The sections of the guide include:
 
 
 
