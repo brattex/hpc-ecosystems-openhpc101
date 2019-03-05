@@ -1,6 +1,5 @@
-<h2>**HOW-TO: setup OpenHPC.** \
-An Introduction to OpenHPC installation & configuration for HPC Ecosystems sites</h2>
-
+## **HOW-TO: setup OpenHPC.** \
+An Introduction to OpenHPC installation & configuration for HPC Ecosystems sites
 
 Bryan Johnston
 
@@ -11,8 +10,8 @@ March 2019
 ---
 
 
-<h2>Introduction</h2>
 
+## Introduction
 
 This document will guide you through setting up a test environment for the HPC Ecosystems OpenHPC workshop.
 
@@ -36,11 +35,11 @@ The custom modifications include:
 
 _* results may vary_
 
-<h2>Useful addenda & Tips</h2>
+
+## Useful addenda & Tips
 
 
-<h3>Workload Time</h3>
-
+### Workload Time
 
 
 
@@ -51,11 +50,11 @@ _* results may vary_
     *   Your familiarity with the HPC design being implemented here
     *   Your willingness to plan before executing (looking before you leap, crawl before you walk, read before you write, live before you die, etc.)
 
-<h2>Install and prepare testbed VM through Vagrant</h2>
+
+## Install and prepare testbed VM through Vagrant
 
 
-<h3>Install Vagrant environment</h3>
-
+### Install Vagrant environment
 
 
 
@@ -78,8 +77,8 @@ Download the HPC Ecosystems OpenHPC Vagrantfile
     2. whatever SSH client to 127.0.0.1:2223
     3. vagrant::vagrant
 
-<h2>Install and prepare OpenHPC</h2>
 
+## Install and prepare OpenHPC
 
 
 
@@ -97,8 +96,8 @@ Download the HPC Ecosystems OpenHPC Vagrantfile
 **
 9. Follow the OpenHPC guide that you have selected in #7
 
-<h2>Basic Overview of HPC Design Choice</h2>
 
+## Basic Overview of HPC Design Choice
 
 
 
@@ -106,8 +105,8 @@ Download the HPC Ecosystems OpenHPC Vagrantfile
     *   this will be useful in determining which ethX interface to use where! \
 
 
-<h2>Other References</h2>
 
+## Other References
 
 
 
