@@ -1,3 +1,4 @@
+
 ## **HOW-TO: setup OpenHPC.** \
 An Introduction to OpenHPC installation & configuration for HPC Ecosystems sites
 
@@ -13,7 +14,8 @@ March 2019
 
 ## QUICKSTART
 
-[Jump to the hands-on practical steps by clicking here.](#bookmark=id.r5m2h0l5cm7x)
+[Jump to the hands-on practical steps by clicking here.](#bookmark=id.r5m2h0l5cm7x) \
+(if link does not work, scroll to "Install and prepare testbed VM through Vagrant")
 
 
 ## Introduction
