@@ -11,6 +11,11 @@ March 2019
 
 
 
+## QUICKSTART
+
+[Jump to the hands-on practical steps by clicking here.](#bookmark=id.r5m2h0l5cm7x)
+
+
 ## Introduction
 
 This document will guide you through setting up a test environment for the HPC Ecosystems OpenHPC workshop.
