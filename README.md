@@ -75,7 +75,7 @@ Download the HPC Ecosystems OpenHPC Vagrantfile
 2. Navigate to the head / root of the directory that will host the VM for the workshop  \
 (i.e. Go to the directory where you want to install the Vagrant VM and go from here)
 3. Download the HPC Ecosystems Vagrantfile into this location: \
-[https://github.com/brattex/hpc-ecosystems-openhpc/blob/master/Vagrantfile](https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/Vagrantfile)
+[https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/Vagrantfile](https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/Vagrantfile) (note, save file as **Vagrantfile** with no file extensions)
 4. The following command will initialise the vagrant environment (and download the vagrant VM) - the entire process may take (many) several minutes depending on the internet connection. \
 
 5. `vagrant up`
