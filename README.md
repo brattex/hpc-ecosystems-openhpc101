@@ -1,4 +1,3 @@
-
 ## **HOW-TO: setup OpenHPC.** \
 An Introduction to OpenHPC installation & configuration for HPC Ecosystems sites
 
@@ -96,8 +95,8 @@ Download the HPC Ecosystems OpenHPC Vagrantfile
 
     4. The shared directory on the VM will be located at **/vagrant.**
     5. The shared directory on your host machine will be located in the head/root of the directory that hosts the VM, and will be the same location as **Vagrantfile**.
-    6. The base image template is named **input.local** \
-
+    6. The base image template is named **input.local**
+        1. download **input.local **here: [https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/input.local](https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/input.local)
     7. Change all parameters after the "-" symbol in the configuration file
     8. **NOTE: You must carefully plan your system design before making changes to this file - a few <span style="text-decoration:underline;">minutes</span> of planning will save you <span style="text-decoration:underline;">days</span> of debugging! \
 **
