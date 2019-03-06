@@ -128,62 +128,9 @@ _
 
 ## OpenHPC Example walkthrough
 
+An example walkthrough is available in this Google Doc:
 
-### The following walkthrough is using the CentOS 7.5 x86_64 Warewulf + PBS Professional guide:
-
-
-
-1. edit **input.local** and update the following parameters
-    1. sms_name="${sms_name:-smshost}"
-    2. sms_ip="${sms_ip:-10.10.10.10}"
-    3. sms_eth_internal="${sms_eth_internal:-eth1}"
-    4. internal_netmask="${internal_netmask:-255.255.0.0}"
-    5. ntp_server="${ntp_server:-0.centos.pool.ntp.org}"
-    6. **bmc_username="${bmc_username:-unknown}"**
-    7. **bmc_password="${bmc_password:-unknown}"**
-    8. eth_provision="${eth_provision:-eth1}"
-    9. num_computes="${num_computes:-2}"
-    10. c_name[0]=c1
-    11. c_name[1]=c2
-    12. c_ip[0]=10.10.10.100
-    13. c_ip[1]=10.10.10.101
-    14. c_mac[0]=00:1a:2b:3c:4f:56
-    15. c_mac[1]=00:1a:2b:3c:4f:56
-    16. c_bmc[0]=10.16.1.1
-    17. c_bmc[1]=10.16.1.2
-    18. compute_regex="${compute_regex:-compute*}"
-    19. compute_prefix="${compute_prefix:-compute}" \
-
-2. The Base Operating System (BOS) for the SMS host is already installed by vagrant. The compute node images will be booted via PXE diskless from the SMS host. 
-    20. Complete all steps in section 2, namely:
-        1. echo ${sms_ip} ${sms_name} >> /etc/hosts  
-        2. systemctl disable firewalld  
-        3. systemctl stop firewalld   \
-
-3. Install OpenHPC Components
-    21. Install the **ohpc-release** package, which will enable the OpenHPC repository for local use, as well as enabling CentOS-7-Base* and EPEL 7 yum repositories.
-    22. Although there is an automated installation template **recipe.sh** that is available for a hands-off automated installation, for the purpose of learning, all commands will be copy/paste from the guide. In a production environment it would be convenient to use the script.
-    23. Install the OHPC base packages and OHPC warewulf packages and enable NTP as per the guide. \
- \
-_Note: Using ipmitool is advisable in a production environment but in this virtual tutorial ipmitool will not be configured._
-    24. Install PBS Pro
-    25. InfiniBand will not be installed.
-    26. Omnipath will not be installed.
-    27. Configure Warewulf (WW) to provision compute nodes on the internal interface (**eth1**).
-    28. Define _compute_ image for provisioning over PXE
-        4. configure the WW image root
-            1. $CHROOT is configured to point to **/opt/ohpc/admin/images/centos7.5** which will host the base image for the compute nodes. In practice, you may have multiple images stored in different directories. For this tutorial we are only using the one image.
-        5. Add OpenHPC base compute components to image and configure client DNS settings
-            2. note the use of **--installroot=$CHROOT **with yum will install components to the PXE image we are constructing, instead of to the local SMS host. This will later mean that all machines booting from this image will have the packages installed.
-        6. Customize system configuration
-        7. We will not add additional customizations in this basic tutorial although in production you may wish to add several of the options presented in 3.8.4 \
-
-        8. We will be using the SMS host (provisioning server)'s user credentials on the compute nodes, so we will import the **/etc/passwd, group, shadow** files to the client image with **wwsh file import**. \
-
-    29. Finalise provisioning configuration
-        9. Assemble the bootstrap image with **wwbootstrap `uname -r`  **
-        10. Assemble VNFS image (this will take the CHROOT environment and create a VNFS capsule for PXE booting).
-        11. 
+[https://docs.google.com/document/d/e/2PACX-1vQ3YNvqfsWkAdW-LKKaWOR4Jw-PwqEWdCojg5O_WNoReYlytS0MLaTVZqVudJg0LS3Ky2z15yG6Pjpl/pub](https://docs.google.com/document/d/e/2PACX-1vQ3YNvqfsWkAdW-LKKaWOR4Jw-PwqEWdCojg5O_WNoReYlytS0MLaTVZqVudJg0LS3Ky2z15yG6Pjpl/pub)
 
 
 ## Basic Overview of HPC Design Choice
