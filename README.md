@@ -89,7 +89,7 @@ Download the HPC Ecosystems OpenHPC SMShost Vagrantfile
     7. The username and password is \
 vagrant::vagrant \
 
-7. Once you are inside your VM environment, the next step is to install the OpenHPC environment onto the VM...
+7. Once you are inside your VM, the next step is to install the OpenHPC environment onto the VM...
 
 
 ## Install and prepare OpenHPC SMS Host
