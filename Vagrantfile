@@ -78,7 +78,7 @@ config.vm.provision "shell", inline: <<-SHELL
     # sudo apt-get -y upgrade && \
     #sudo yum install vim -y
 	sudo yum install vim git tmux -y
-	sudo yum update -y
+	sudo yum update -y --exclude=kernel*
     
 #      build-essential git pkg-config zip unzip software-properties-common \
 #      python-pip python-dev \
