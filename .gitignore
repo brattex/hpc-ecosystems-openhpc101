@@ -5,7 +5,5 @@
 Install_guide-*
 
 # OpenHPC Client VMs
-"openhpc client vms/OpenHPC Client 1/*"
-"openhpc client vms/OpenHPC Client 2/*"
-"openhpc client vms/OpenHPC Client 2/OpenHPC Client 2.vbox"
-"openhpc client vms/OpenHPC Client 2/OpenHPC Client 1.vbox"
+openhpc\ client\ vms/OpenHPC\ Client\ 1/
+openhpc\ client\ vms/OpenHPC\ Client\ 2/
