@@ -12,9 +12,9 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  #config.vm.box = "bento/centos-7.6"
-  #config.vm.box_version = "201812.27.0"
-  config.vm.box = "bento/centos-7.5"
+  config.vm.box = "bento/centos-7.6"
+  config.vm.box_version = "201812.27.0"
+  #config.vm.box = "bento/centos-7.5"
 #  config.vm.box_version = "201811.25.0"
 
   # Disable automatic box update checking. If you disable this, then
