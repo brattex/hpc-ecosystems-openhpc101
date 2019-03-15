@@ -94,8 +94,8 @@ c_ip[2]=10.10.10.102
 c_ip[3]=10.10.10.103
 
 # compute node MAC addreses for provisioning interface
-c_mac[0]=00:1a:2b:3c:4f:56
-c_mac[1]=00:1a:2b:3c:4f:56
+c_mac[0]=08:00:27:D1:17:7B #080027F9F3B1
+c_mac[1]=08:00:27:F1:4A:61 #080027F59A31
 c_mac[2]=00:1a:2b:3c:4f:56
 c_mac[3]=00:1a:2b:3c:4f:56
 
