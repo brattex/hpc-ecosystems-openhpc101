@@ -35,7 +35,7 @@ provision_wait="${provision_wait:-180}"
 domain_name="${domain_name:-local}"
 
 # Path to copy of OS ISO image (xCAT recipe only)
-iso_path="${iso_path:-}"
+iso_path="/vagrant/iso"
 
 # Path to local repository web roots (xCAT recipe only)
 ohpc_repo_dir="${ohpc_repo_dir:-/install/ohpc}"
@@ -75,7 +75,7 @@ slurm_node_config="${slurm_node_config:-c[1-4] Sockets=2 CoresPerSocket=12 Threa
 # -------------------------
 
 # total number of computes
-num_computes="${num_computes:-4}"
+num_computes="${num_computes:-2}"
 
 # regex and starting prefix that matches defined compute hostnames
 compute_regex="${compute_regex:-c*}"
@@ -94,8 +94,8 @@ c_ip[2]=10.10.10.102
 c_ip[3]=10.10.10.103
 
 # compute node MAC addreses for provisioning interface
-c_mac[0]=08:00:27:D1:17:7B #080027F9F3B1
-c_mac[1]=08:00:27:F1:4A:61 #080027F59A31
+c_mac[0]=08:00:27:F9:F3:B1
+c_mac[1]=08:00:27:F5:9A:31
 c_mac[2]=00:1a:2b:3c:4f:56
 c_mac[3]=00:1a:2b:3c:4f:56
 
