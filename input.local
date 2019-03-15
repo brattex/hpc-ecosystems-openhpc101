@@ -75,7 +75,7 @@ slurm_node_config="${slurm_node_config:-c[1-4] Sockets=2 CoresPerSocket=12 Threa
 # -------------------------
 
 # total number of computes
-num_computes="${num_computes:-4}"
+num_computes="${num_computes:-2}"
 
 # regex and starting prefix that matches defined compute hostnames
 compute_regex="${compute_regex:-c*}"
