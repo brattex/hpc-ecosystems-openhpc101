@@ -6,7 +6,7 @@
 ** Use VBoxManage or the VirtualBox Manager GUI to make changes.
 -->
 <VirtualBox xmlns="http://www.virtualbox.org/" version="1.16-windows">
-  <Machine uuid="{4ebbb1ca-6d33-4ab9-b031-4fb3558b9573}" name="OpenHPC Client 2" OSType="RedHat_64" snapshotFolder="Snapshots" lastStateChange="2019-03-14T15:27:41Z">
+  <Machine uuid="{4ebbb1ca-6d33-4ab9-b031-4fb3558b9573}" name="OpenHPC Client 2" OSType="RedHat_64" snapshotFolder="Snapshots" currentStateModified="false" lastStateChange="2019-03-14T14:08:55Z">
     <MediaRegistry>
       <HardDisks>
         <HardDisk uuid="{ff922cc9-b1ac-487c-ab4c-e7e4abf495ca}" location="OpenHPC Client 2.vdi" format="VDI" type="Normal"/>
