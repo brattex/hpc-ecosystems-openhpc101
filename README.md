@@ -1,10 +1,9 @@
-
 ## **HOW-TO: setup OpenHPC.** \
 An Introduction to OpenHPC installation & configuration for HPC Ecosystems sites
 
 Bryan Johnston
 
-20190315
+20190318
 
 
 
@@ -14,8 +13,15 @@ Bryan Johnston
 
 ## QUICKSTART
 
-[Jump to the hands-on practical steps by clicking here.](#bookmark=id.r5m2h0l5cm7x) \
-(if link does not work, scroll to "Install and prepare testbed VM through Vagrant")
+[Jump to the hands-on practical steps by clicking here.](#bookmark=id.r5m2h0l5cm7x) 
+
+(if link does not work, scroll to "Install and prepare testbed VM through Vagrant") \
+
+
+enter:
+
+shift-enter:: \
+
 
 
 ## Introduction
@@ -65,10 +71,10 @@ _* results may vary_
 
 
 
-1. Download & install Vagrant from [https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html) \
+1. Download & install Vagrant from [https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html) 
 
 
-Option 1: Clone git repository to local machine
+### Option 1: Clone git repository to local machine
 
 
 
@@ -77,68 +83,62 @@ Option 1: Clone git repository to local machine
 4. git remote add origin [https://github.com/brattex/hpc-ecosystems-openhpc101.git](https://github.com/brattex/hpc-ecosystems-openhpc101.git)
 5. git pull origin master
 
-Option 2: Download the HPC Ecosystems OpenHPC SMShost Vagrantfile
+
+### Option 2: Download the HPC Ecosystems OpenHPC SMShost Vagrantfile
 
 
 
 6. Navigate to the head / root of the directory that will host the VM for the workshop  \
 (i.e. Go to the directory where you want to install the Vagrant VM and go from here, for example **/openhpc/smshost/**)
-7. Download the HPC Ecosystems SMShost **Vagrantfile **into this location: \
+7. Download the HPC Ecosystems SMShost **Vagrantfile** into this location: \
 [https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/Vagrantfile](https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/Vagrantfile) (note, save file as **Vagrantfile** with no file extensions)
 
-Deploy HPC Ecosystems OpenHPC SMShost
+
+### Deploy HPC Ecosystems OpenHPC SMShost
 
 
 
-8. The following command will initialise the vagrant environment (and download the vagrant VM) - the entire process may take (many) several minutes depending on the internet connection. \
+8. The following command (**vagrant up**) will initialise the vagrant environment (and download the vagrant VM) - the entire process may take (many) several minutes depending on the internet connection. \
 
 9. `vagrant up`
     1. This will read the Vagrantfile parameters and ...
     2. Create the Virtualbox (or other Hypervisor) framework (such as vCPUs, RAM, NIC's, etc.) then ...
     3. Download the CentOS image and install it onto the VM. 
-        1. Note: this is CentOS 7.5 **<span style="text-decoration:underline;">64bit</span>**
-    4. Once the VM is booted up for the first time, a Vagrant shell script will run ~~a **yum update** and also~~ some **yum install** commands, all "behind-the-scenes". \
-
+        1. Note: this is currently CentOS 7.5 **<span style="text-decoration:underline;">64bit</span>**
+    4. Once the VM is booted up for the first time, a Vagrant shell script will run ~~a **yum update** and also~~ some **yum install** commands, all "behind-the-scenes".
 10. Once the process is completed you should be able to SSH into the VM either through (a) or (b) below.
     5. `vagrant ssh`
     6. whatever SSH client to 127.0.0.1:2229
     7. The username and password is \
-vagrant::vagrant \
-
+vagrant::vagrant
 11. Once you are inside your VM, the next step is to install the OpenHPC environment onto the VM...
 
 
 ## Install and prepare OpenHPC SMS Host
 
+**HINT: to 'source' the input.local file - ". input.local"**
 
 
-12. Download your chosen OpenHPC image guide from: \
-[https://openhpc.community/downloads/](https://openhpc.community/downloads/) \
 
+12. Download your chosen OpenHPC image guide from: [https://openhpc.community/downloads/](https://openhpc.community/downloads/)
     8. _For the sake of illustrations in this guide, we will be using  \
-**CentOS 7 x86_64 with Warewulf + PBS Professional (diskless)** \
-_
-    9. _It is a useful approach to store this PDF in the **/vagrant **shared directory \
-_
-        2. The shared directory _on the VM_ is located at **/vagrant. \
-**
-        3. The shared directory _on your host machine_ is located in the head/root of the directory structure that hosts the VM, and will be the same path as the location for the **Vagrantfile **you downloaded earlier.. \
-_(e.g. /openhpc/smshost/) \
-_
+**CentOS 7 x86_64 with Warewulf + PBS Professional (diskless)**_
+    9. _It is a useful approach to store this PDF in the **/vagrant **shared directory_
+        2. The shared directory _on the VM_ is located at **/vagrant.**
+        3. The shared directory _on your host machine_ is located in the head/root of the directory structure that hosts the VM, and will be the same path as the location for the **Vagrantfile **you downloaded earlier _(e.g. /openhpc/smshost/)_
 13. Either _directly on the VM_ or _through the Vagrant shared directory_, edit the base image template **input.local**. _ \
 _
     10. The base image template is named **input.local **and is downloaded from OpenHPC Docs or from the git repository below (it is recommended to download the git repository version because this has been modified slightly for HPC Ecosystems sites)
-        4. download **input.local **from the link below and save it in **/vagrant **(which is accessible in the VM): [https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/input.local](https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/input.local) \
+        4. download **input.local** from the link below and save it in **/vagrant **(which is accessible in the VM): [https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/input.local](https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/input.local) \
 
     11. Change appropriate parameters after the "-" symbol in the configuration file
         5. You do not need to be concerned about uncommenting what is not needed for your particular environment; this base image template is used by **recipe.sh** for automated installations and will check all the parameters before installing anything. \
 
         6. In our case, we are doing the steps run in **recipe.sh** manually, and only the relevant global parameters for your chosen configuration will be used. \
 
-    12. **NOTE: You must carefully plan your system design before making changes to this file - a few <span style="text-decoration:underline;">minutes</span> of planning will save you <span style="text-decoration:underline;">days</span> of debugging! \
-**
-14. Follow the OpenHPC guide that you have selected from [https://openhpc.community/downloads/](https://openhpc.community/downloads/) (above) \
-
+    12. **NOTE: You must carefully plan your system design before making changes to this file - a few <span style="text-decoration:underline;">minutes</span> of planning will save you <span style="text-decoration:underline;">days</span> of debugging!**
+    13. SOURCE your input.local when you are ready to load the parameters into your current shell session..
+14. Follow the OpenHPC guide that you have selected from [https://openhpc.community/downloads/](https://openhpc.community/downloads/) (above)
 
 
 ## Install and prepare OpenHPC HPC vClients Host
@@ -146,9 +146,9 @@ _
 
 
 15. Included in github are two virtual clients to test with the SMS host (under openhpc client vms/)
-    13. OpenHPC Client 00
+    14. OpenHPC Client 00
         7. Virtual MAC address 080027F9F3B1 (internal network 'hpcnet')
-    14. OpenHPC Client 01
+    15. OpenHPC Client 01
         8. Virtual MAC address 080027F59A31 (internal network 'hpcnet') \
 
 16. Both clients are Virtualbox VMs ready to accept a 64bit RHEL-type OS with 1GB RAM and 8GB dynamic disk. Default to PXE boot.
@@ -170,6 +170,18 @@ An example walkthrough is available in this Google Doc:
 *   [A basic overview of the planned layout of the OpenHPC "SMS" in relation to the WWW/WAN and HPC/LAN](https://docs.google.com/drawings/d/1dLHmKsdG1V1BkKHcwAN7WEJpGx49unMi7xDwe-L4FnQ/edit?usp=sharing)
     *   this will be useful in determining which ethX interface to use where! \
 
+
+
+## Known Issues / Bugs
+
+
+
+*   vagrant image eth1 becomes set to "host only adapter" but should be "internal" and "hpcnet" for the DHCP to issue out on HPC network (which clients are expecting to receive DORA on).
+*   no local user defined in WW guide - add a local user before booting nodes
+*   [https://groups.io/g/OpenHPC-users/topic/22676845?p=,,,20,0,0,0::recentpostdate%2Fsticky,,,20,0,0,22676845](https://groups.io/g/OpenHPC-users/topic/22676845?p=,,,20,0,0,0::recentpostdate%2Fsticky,,,20,0,0,22676845)
+    *   when the VM is "reset" instead of cold reboot (power off and on) it gets stuck in a stale state
+    *   a workaround might be to boot from the ipxe ISO (see final post in link above)
+*   VM clients have 1GB of RAM which is usable but causes some issues with the RAMdisk - increasing to 4GB is good but not necessarily practical - try 2GB and see if this improves performance.
 
 
 ## Other References
