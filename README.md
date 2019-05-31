@@ -3,7 +3,7 @@ An Introduction to OpenHPC installation & configuration for HPC Ecosystems sites
 
 Bryan Johnston
 
-20190318
+20190531
 
 
 
@@ -15,7 +15,7 @@ Bryan Johnston
 
 [Jump to the hands-on practical steps by clicking here.](#bookmark=id.r5m2h0l5cm7x) 
 
-(if link does not work, scroll to "Install and prepare testbed VM through Vagrant") \
+(if link does not work, scroll to “Install and prepare testbed VM through Vagrant”) \
 
 
 enter:
@@ -45,6 +45,7 @@ The custom modifications include:
 
 1. tmux ; vim ; git 
 2. input.local (from OpenHPC) with custom edits which do not need to be replicated
+3. setenv.sh
 
 _* results may vary_
 
@@ -102,10 +103,10 @@ _* results may vary_
 
 9. `vagrant up`
     1. This will read the Vagrantfile parameters and ...
-    2. Create the Virtualbox (or other Hypervisor) framework (such as vCPUs, RAM, NIC's, etc.) then ...
+    2. Create the Virtualbox (or other Hypervisor) framework (such as vCPUs, RAM, NIC’s, etc.) then ...
     3. Download the CentOS image and install it onto the VM. 
         1. Note: this is currently CentOS 7.5 **<span style="text-decoration:underline;">64bit</span>**
-    4. Once the VM is booted up for the first time, a Vagrant shell script will run ~~a **yum update** and also~~ some **yum install** commands, all "behind-the-scenes".
+    4. Once the VM is booted up for the first time, a Vagrant shell script will run ~~a **yum update** and also~~ some **yum install** commands, all “behind-the-scenes”.
 10. Once the process is completed you should be able to SSH into the VM either through (a) or (b) below.
     5. `vagrant ssh`
     6. whatever SSH client to 127.0.0.1:2229
@@ -116,7 +117,7 @@ vagrant::vagrant
 
 ## Install and prepare OpenHPC SMS Host
 
-**HINT: to 'source' the input.local file - ". input.local"**
+**HINT: to ‘source’ the input.local file - “. input.local”**
 
 
 
@@ -131,7 +132,7 @@ _
     10. The base image template is named **input.local **and is downloaded from OpenHPC Docs or from the git repository below (it is recommended to download the git repository version because this has been modified slightly for HPC Ecosystems sites)
         4. download **input.local** from the link below and save it in **/vagrant **(which is accessible in the VM): [https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/input.local](https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/input.local) \
 
-    11. Change appropriate parameters after the "-" symbol in the configuration file
+    11. Change appropriate parameters after the “-” symbol in the configuration file
         5. You do not need to be concerned about uncommenting what is not needed for your particular environment; this base image template is used by **recipe.sh** for automated installations and will check all the parameters before installing anything. \
 
         6. In our case, we are doing the steps run in **recipe.sh** manually, and only the relevant global parameters for your chosen configuration will be used. \
@@ -147,11 +148,12 @@ _
 
 15. Included in github are two virtual clients to test with the SMS host (under openhpc client vms/)
     14. OpenHPC Client 00
-        7. Virtual MAC address 080027F9F3B1 (internal network 'hpcnet')
+        7. Virtual MAC address 080027F9F3B1 (internal network ‘hpcnet’)
     15. OpenHPC Client 01
-        8. Virtual MAC address 080027F59A31 (internal network 'hpcnet') \
+        8. Virtual MAC address 080027F59A31 (internal network ‘hpcnet’) \
 
 16. Both clients are Virtualbox VMs ready to accept a 64bit RHEL-type OS with 1GB RAM and 8GB dynamic disk. Default to PXE boot.
+    16. NOTE: As of v1.3.7 the clients must have **2GB of RAM** - you can edit this within Virtualbox via **Settings → System → Base Memory**
 
 
 
@@ -176,10 +178,10 @@ An example walkthrough is available in this Google Doc:
 
 
 
-*   vagrant image eth1 becomes set to "host only adapter" but should be "internal" and "hpcnet" for the DHCP to issue out on HPC network (which clients are expecting to receive DORA on).
+*   vagrant image eth1 becomes set to “host only adapter” but should be “internal” and “hpcnet” for the DHCP to issue out on HPC network (which clients are expecting to receive DORA on).
 *   no local user defined in WW guide - add a local user before booting nodes
 *   [https://groups.io/g/OpenHPC-users/topic/22676845?p=,,,20,0,0,0::recentpostdate%2Fsticky,,,20,0,0,22676845](https://groups.io/g/OpenHPC-users/topic/22676845?p=,,,20,0,0,0::recentpostdate%2Fsticky,,,20,0,0,22676845)
-    *   when the VM is "reset" instead of cold reboot (power off and on) it gets stuck in a stale state
+    *   when the VM is “reset” instead of cold reboot (power off and on) it gets stuck in a stale state
     *   a workaround might be to boot from the ipxe ISO (see final post in link above)
 *   VM clients have 1GB of RAM which is usable but causes some issues with the RAMdisk - increasing to 4GB is good but not necessarily practical - try 2GB and see if this improves performance.
 
@@ -190,3 +192,5 @@ An example walkthrough is available in this Google Doc:
 
 *   CHPC OpenHPC presentation slides
     *   [https://docs.google.com/presentation/d/1sXXEJKCml8pRlv1M1M5lHaewRON_-9LZdqFXbYmI9MY/edit?usp=sharing](https://docs.google.com/presentation/d/1sXXEJKCml8pRlv1M1M5lHaewRON_-9LZdqFXbYmI9MY/edit?usp=sharing)
+
+<!-- Docs to Markdown version 1.0β17 -->
