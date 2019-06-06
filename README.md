@@ -1,9 +1,9 @@
-## **HOW-TO: setup OpenHPC.** \
+## **HOW-TO: setup OpenHPC.**
 An Introduction to OpenHPC installation & configuration for HPC Ecosystems sites
 
 Bryan Johnston
 
-20190531
+20190606
 
 
 
@@ -123,7 +123,8 @@ vagrant::vagrant
 
 12. Download your chosen OpenHPC image guide from: [https://openhpc.community/downloads/](https://openhpc.community/downloads/)
     8. _For the sake of illustrations in this guide, we will be using  \
-**CentOS 7 x86_64 with Warewulf + PBS Professional (diskless)**_
+**~~CentOS 7 x86_64 with Warewulf + PBS Professional (diskless) \
+~~CentOS 7 x86_64: [Install guide with xCAT (Stateless) + Slurm (PDF)](https://github.com/openhpc/ohpc/releases/download/v1.3.7.GA/Install_guide-CentOS7-xCAT-Stateless-SLURM-1.3.7-x86_64.pdf)**_
     9. _It is a useful approach to store this PDF in the **/vagrant **shared directory_
         2. The shared directory _on the VM_ is located at **/vagrant.**
         3. The shared directory _on your host machine_ is located in the head/root of the directory structure that hosts the VM, and will be the same path as the location for the **Vagrantfile **you downloaded earlier _(e.g. /openhpc/smshost/)_
@@ -192,5 +193,3 @@ An example walkthrough is available in this Google Doc:
 
 *   CHPC OpenHPC presentation slides
     *   [https://docs.google.com/presentation/d/1sXXEJKCml8pRlv1M1M5lHaewRON_-9LZdqFXbYmI9MY/edit?usp=sharing](https://docs.google.com/presentation/d/1sXXEJKCml8pRlv1M1M5lHaewRON_-9LZdqFXbYmI9MY/edit?usp=sharing)
-
-<!-- Docs to Markdown version 1.0β17 -->
