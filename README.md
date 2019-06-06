@@ -1,5 +1,7 @@
 ## **HOW-TO: setup OpenHPC.**
-An Introduction to OpenHPC installation & configuration for HPC Ecosystems sites
+
+
+## An Introduction to OpenHPC installation & configuration for HPC Ecosystems sites
 
 Bryan Johnston
 
@@ -15,13 +17,7 @@ Bryan Johnston
 
 [Jump to the hands-on practical steps by clicking here.](#bookmark=id.r5m2h0l5cm7x) 
 
-(if link does not work, scroll to “Install and prepare testbed VM through Vagrant”) \
-
-
-enter:
-
-shift-enter:: \
-
+(if link does not work, scroll to “Install and prepare testbed VM through Vagrant”)
 
 
 ## Introduction
@@ -89,18 +85,21 @@ _* results may vary_
 
 
 
-6. Navigate to the head / root of the directory that will host the VM for the workshop  \
-(i.e. Go to the directory where you want to install the Vagrant VM and go from here, for example **/openhpc/smshost/**)
-7. Download the HPC Ecosystems SMShost **Vagrantfile** into this location: \
-[https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/Vagrantfile](https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/Vagrantfile) (note, save file as **Vagrantfile** with no file extensions)
+6. Navigate to the head / root of the directory that will host the VM for the workshop 
+
+    (i.e. Go to the directory where you want to install the Vagrant VM and go from here, for example **/openhpc/smshost/**)
+
+7. Download the HPC Ecosystems SMShost **Vagrantfile** into this location:
+
+    [https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/Vagrantfile](https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/Vagrantfile) (note, save file as **Vagrantfile** with no file extensions)
+
 
 
 ### Deploy HPC Ecosystems OpenHPC SMShost
 
 
 
-8. The following command (**vagrant up**) will initialise the vagrant environment (and download the vagrant VM) - the entire process may take (many) several minutes depending on the internet connection. \
-
+8. The following command (**vagrant up**) will initialise the vagrant environment (and download the vagrant VM) - the entire process may take (many) several minutes depending on the internet connection.
 9. `vagrant up`
     1. This will read the Vagrantfile parameters and ...
     2. Create the Virtualbox (or other Hypervisor) framework (such as vCPUs, RAM, NIC’s, etc.) then ...
@@ -110,8 +109,10 @@ _* results may vary_
 10. Once the process is completed you should be able to SSH into the VM either through (a) or (b) below.
     5. `vagrant ssh`
     6. whatever SSH client to 127.0.0.1:2229
-    7. The username and password is \
-vagrant::vagrant
+    7. The username and password is
+
+        **vagrant::vagrant**
+
 11. Once you are inside your VM, the next step is to install the OpenHPC environment onto the VM...
 
 
@@ -121,23 +122,28 @@ vagrant::vagrant
 
 
 
-12. Download your chosen OpenHPC image guide from: [https://openhpc.community/downloads/](https://openhpc.community/downloads/)
-    8. _For the sake of illustrations in this guide, we will be using  \
-**~~CentOS 7 x86_64 with Warewulf + PBS Professional (diskless) \
-~~CentOS 7 x86_64: [Install guide with xCAT (Stateless) + Slurm (PDF)](https://github.com/openhpc/ohpc/releases/download/v1.3.7.GA/Install_guide-CentOS7-xCAT-Stateless-SLURM-1.3.7-x86_64.pdf)**_
+12. Download your chosen OpenHPC image guide from:
+
+    [https://openhpc.community/downloads/](https://openhpc.community/downloads/)
+
+    8. _For the sake of illustrations in this guide, we will be using _
+
+        _ \
+**~~CentOS 7 x86_64 with Warewulf + PBS Professional (diskless)~~**_
+
+
+        **_~~ \
+~~CentOS 7 x86_64: [Install guide with xCAT (Stateless) + Slurm (PDF)](https://github.com/openhpc/ohpc/releases/download/v1.3.7.GA/Install_guide-CentOS7-xCAT-Stateless-SLURM-1.3.7-x86_64.pdf)_**
+
     9. _It is a useful approach to store this PDF in the **/vagrant **shared directory_
         2. The shared directory _on the VM_ is located at **/vagrant.**
-        3. The shared directory _on your host machine_ is located in the head/root of the directory structure that hosts the VM, and will be the same path as the location for the **Vagrantfile **you downloaded earlier _(e.g. /openhpc/smshost/)_
-13. Either _directly on the VM_ or _through the Vagrant shared directory_, edit the base image template **input.local**. _ \
-_
+        3. The shared directory _on your host machine_ is located in the head/root of the directory structure that hosts the VM, and will be the same path as the location for the **Vagrantfile** you downloaded earlier _(e.g. /openhpc/smshost/)_
+13. Either _directly on the VM_ or _through the Vagrant shared directory_, edit the base image template **input.local**
     10. The base image template is named **input.local **and is downloaded from OpenHPC Docs or from the git repository below (it is recommended to download the git repository version because this has been modified slightly for HPC Ecosystems sites)
-        4. download **input.local** from the link below and save it in **/vagrant **(which is accessible in the VM): [https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/input.local](https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/input.local) \
-
+        4. download **input.local** from the link below and save it in **/vagrant **(which is accessible in the VM): [https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/input.local](https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/input.local)
     11. Change appropriate parameters after the “-” symbol in the configuration file
-        5. You do not need to be concerned about uncommenting what is not needed for your particular environment; this base image template is used by **recipe.sh** for automated installations and will check all the parameters before installing anything. \
-
-        6. In our case, we are doing the steps run in **recipe.sh** manually, and only the relevant global parameters for your chosen configuration will be used. \
-
+        5. You do not need to be concerned about uncommenting what is not needed for your particular environment; this base image template is used by **recipe.sh** for automated installations and will check all the parameters before installing anything.
+        6. In our case, we are doing the steps run in **recipe.sh** manually, and only the relevant global parameters for your chosen configuration will be used.
     12. **NOTE: You must carefully plan your system design before making changes to this file - a few <span style="text-decoration:underline;">minutes</span> of planning will save you <span style="text-decoration:underline;">days</span> of debugging!**
     13. SOURCE your input.local when you are ready to load the parameters into your current shell session..
 14. Follow the OpenHPC guide that you have selected from [https://openhpc.community/downloads/](https://openhpc.community/downloads/) (above)
@@ -151,8 +157,7 @@ _
     14. OpenHPC Client 00
         7. Virtual MAC address 080027F9F3B1 (internal network ‘hpcnet’)
     15. OpenHPC Client 01
-        8. Virtual MAC address 080027F59A31 (internal network ‘hpcnet’) \
-
+        8. Virtual MAC address 080027F59A31 (internal network ‘hpcnet’)
 16. Both clients are Virtualbox VMs ready to accept a 64bit RHEL-type OS with 1GB RAM and 8GB dynamic disk. Default to PXE boot.
     16. NOTE: As of v1.3.7 the clients must have **2GB of RAM** - you can edit this within Virtualbox via **Settings → System → Base Memory**
 
@@ -171,8 +176,7 @@ An example walkthrough is available in this Google Doc:
 
 
 *   [A basic overview of the planned layout of the OpenHPC "SMS" in relation to the WWW/WAN and HPC/LAN](https://docs.google.com/drawings/d/1dLHmKsdG1V1BkKHcwAN7WEJpGx49unMi7xDwe-L4FnQ/edit?usp=sharing)
-    *   this will be useful in determining which ethX interface to use where! \
-
+    *   this will be useful in determining which ethX interface to use where!
 
 
 ## Known Issues / Bugs
@@ -193,3 +197,5 @@ An example walkthrough is available in this Google Doc:
 
 *   CHPC OpenHPC presentation slides
     *   [https://docs.google.com/presentation/d/1sXXEJKCml8pRlv1M1M5lHaewRON_-9LZdqFXbYmI9MY/edit?usp=sharing](https://docs.google.com/presentation/d/1sXXEJKCml8pRlv1M1M5lHaewRON_-9LZdqFXbYmI9MY/edit?usp=sharing)
+
+<!-- Docs to Markdown version 1.0β17 -->
