@@ -1,3 +1,7 @@
+
+## **(migrate to README.MD → Add-ons→ Docs to Markdown...)**
+
+
 ## **HOW-TO: setup OpenHPC.**
 
 
@@ -62,6 +66,13 @@ _* results may vary_
 
 
 ## Install and prepare testbed VM through Vagrant
+
+
+### Install Virtualbox
+
+
+
+1. [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
 
 
 ### Install Vagrant environment
@@ -198,4 +209,3 @@ An example walkthrough is available in this Google Doc:
 *   CHPC OpenHPC presentation slides
     *   [https://docs.google.com/presentation/d/1sXXEJKCml8pRlv1M1M5lHaewRON_-9LZdqFXbYmI9MY/edit?usp=sharing](https://docs.google.com/presentation/d/1sXXEJKCml8pRlv1M1M5lHaewRON_-9LZdqFXbYmI9MY/edit?usp=sharing)
 
-<!-- Docs to Markdown version 1.0β17 -->
