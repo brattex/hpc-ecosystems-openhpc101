@@ -201,6 +201,7 @@ CentOS 7 x86_64: Install guide with xCAT (Stateless) + Slurm (PDF)
 
             ```
             ![](images/2019-06-27 10_20_51-openHPC.png?raw=true)
+            ...
             ![](images/2019-06-27 10_22_12-vagrant@localhost__vagrant.png?raw=true)
             ```
 
