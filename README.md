@@ -1,4 +1,4 @@
-<!----- Conversion time: 2.032 seconds.
+<!----- Conversion time: 1.737 seconds.
 
 
 Using this Markdown file:
@@ -11,7 +11,7 @@ Using this Markdown file:
 Conversion notes:
 
 * Docs to Markdown version 1.0β17
-* Thu Jun 27 2019 02:26:04 GMT-0700 (PDT)
+* Thu Jun 27 2019 02:28:39 GMT-0700 (PDT)
 * Source doc: https://docs.google.com/open?id=1Aeez_p2ebRwVGbIh5KVImHIzmNWfE_P2f5M2tK1jAIg
 ----->
 
@@ -234,7 +234,13 @@ CentOS 7 x86_64: Install guide with xCAT (Stateless) + Slurm (PDF)
             ![](images/2019-06-27_localhost.png?raw=true)
             !~
             ![](images/2019-06-27_openHPC.png?raw=true)
+
+
+            ![vagrant shared folder on host](images/2019-06-27_localhost.png?raw=true)
+            ![vagrant shared folder on VM](images/2019-06-27_openHPC.png)
+
             ```
+
 
 
 8. Either _directly on the VM_ or _through the Vagrant shared directory_, edit the base image template **~~input.local~~ setenv.c**
