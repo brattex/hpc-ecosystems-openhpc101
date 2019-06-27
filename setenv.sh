@@ -3,7 +3,7 @@ sms_ip=10.10.10.10 # Internal IP address on SMS server
 domain_name=hpcnet # Local network domain name
 sms_eth_internal=eth1 # Internal Ethernet interface on SMS
 internal_netmask=255.255.255.0 # Subnet netmask for internal network
-ntp_server=ntp_server=time.ace.chpc.ac.za 
+ntp_server=time.ace.chpc.ac.za
 bmc_username=
 bmc_password=
 num_computes=3
