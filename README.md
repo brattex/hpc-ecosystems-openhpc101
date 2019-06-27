@@ -1,4 +1,4 @@
-<!----- Conversion time: 1.703 seconds.
+<!----- Conversion time: 1.146 seconds.
 
 
 Using this Markdown file:
@@ -11,7 +11,7 @@ Using this Markdown file:
 Conversion notes:
 
 * Docs to Markdown version 1.0β17
-* Thu Jun 27 2019 02:38:58 GMT-0700 (PDT)
+* Thu Jun 27 2019 02:40:19 GMT-0700 (PDT)
 * Source doc: https://docs.google.com/open?id=1Aeez_p2ebRwVGbIh5KVImHIzmNWfE_P2f5M2tK1jAIg
 ----->
 
@@ -48,20 +48,10 @@ This document will guide you through setting up a test environment for the HPC E
 
 
 ```
-IMPORTANT!
-
-
-```
-
-
-
-*   <code><em>This workshop uses Virtualbox as a practice lab environment for the training.</em></code>
-*   <code><em>Vagrant is used to manage the Virtualbox VM.</em></code>
-
-
-```
+IMPORTANT! 
+This workshop uses Virtualbox as a practice lab environment for the training.
+Vagrant is used to manage the Virtualbox VM.
 YOU DO NOT NEED VIRTUALBOX OR VAGRANT FOR THE FINAL HPC DEPLOYMENT.
-
 Vagrant and Virtualbox are used for the TRAINING LAB.
 
 
@@ -77,7 +67,7 @@ Vagrant and Virtualbox are used for the training lab.
 ```
 
 
-This training involves deploying an **OpenHPC-ready Virtualbox VM **using **Vagrant**. The sections of the guide include:
+This training involves deploying an **OpenHPC-ready Virtualbox VM using Vagrant**. The sections of the guide include:
 
 
 
