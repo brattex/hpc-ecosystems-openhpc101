@@ -1,3 +1,25 @@
+<!----- Conversion time: 2.032 seconds.
+
+
+Using this Markdown file:
+
+1. Cut and paste this output into your source file.
+2. See the notes and action items below regarding this conversion run.
+3. Check the rendered output (headings, lists, code blocks, tables) for proper
+   formatting and use a linkchecker before you publish this page.
+
+Conversion notes:
+
+* Docs to Markdown version 1.0β17
+* Thu Jun 27 2019 02:26:04 GMT-0700 (PDT)
+* Source doc: https://docs.google.com/open?id=1Aeez_p2ebRwVGbIh5KVImHIzmNWfE_P2f5M2tK1jAIg
+----->
+
+
+
+## **(migrate to README.MD → Add-ons→ Docs to Markdown...)**
+
+
 ## **HOW-TO: setup OpenHPC.**
 
 
@@ -207,6 +229,14 @@ CentOS 7 x86_64: Install guide with xCAT (Stateless) + Slurm (PDF)
 
 
         4. _HINT: **/vagrant** is not the same as **/home/vagrant …**_
+
+            ```
+            ![](images/2019-06-27_localhost.png?raw=true)
+            !~
+            ![](images/2019-06-27_openHPC.png?raw=true)
+            ```
+
+
 8. Either _directly on the VM_ or _through the Vagrant shared directory_, edit the base image template **~~input.local~~ setenv.c**
     9. The base image template is named **input.local **and is downloaded from OpenHPC Docs or from the git repository below (it is recommended to download the git repository version because this has been modified slightly for HPC Ecosystems sites). The simplified version is **setenv.c**.
     10. HINT: for simplicity, we recommend to use setenv.c for the workshop because it has a simplified list of parameters
