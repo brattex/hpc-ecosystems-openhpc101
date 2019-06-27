@@ -1,4 +1,4 @@
-<!----- Conversion time: 1.722 seconds.
+<!----- Conversion time: 1.577 seconds.
 
 
 Using this Markdown file:
@@ -11,7 +11,7 @@ Using this Markdown file:
 Conversion notes:
 
 * Docs to Markdown version 1.0β17
-* Thu Jun 27 2019 02:46:45 GMT-0700 (PDT)
+* Thu Jun 27 2019 02:57:45 GMT-0700 (PDT)
 * Source doc: https://docs.google.com/open?id=1Aeez_p2ebRwVGbIh5KVImHIzmNWfE_P2f5M2tK1jAIg
 ----->
 
@@ -197,22 +197,7 @@ source setenv.c
 
 AFTER THE COMMAND THE ENVIRONMENT VARIABLES (YOUR SETTINGS THAT YOU DEFINED IN THE FILE) ARE UPDATED.
 
-
 ```
-HINT: there are two configuration files
-
-input.local - advanced customisation of the final system
-setenv.c - simple customisation for the demo system
-
-to 'source' the input.local file - "source input.local"
-
-That is (SOURCE) (SPACE) (FILENAME)
-
-source ./setenv.c
-
-After this command, the ENVIRONMENT VARIABLES are updated with the parameters specified in input.local or setenv.c
-```
-
 
 
 
