@@ -1,4 +1,4 @@
-<!----- Conversion time: 1.146 seconds.
+<!----- Conversion time: 2.007 seconds.
 
 
 Using this Markdown file:
@@ -11,7 +11,7 @@ Using this Markdown file:
 Conversion notes:
 
 * Docs to Markdown version 1.0β17
-* Thu Jun 27 2019 02:40:19 GMT-0700 (PDT)
+* Thu Jun 27 2019 02:41:48 GMT-0700 (PDT)
 * Source doc: https://docs.google.com/open?id=1Aeez_p2ebRwVGbIh5KVImHIzmNWfE_P2f5M2tK1jAIg
 ----->
 
@@ -53,17 +53,6 @@ This workshop uses Virtualbox as a practice lab environment for the training.
 Vagrant is used to manage the Virtualbox VM.
 YOU DO NOT NEED VIRTUALBOX OR VAGRANT FOR THE FINAL HPC DEPLOYMENT.
 Vagrant and Virtualbox are used for the TRAINING LAB.
-
-
-```
-IMPORTANT!
-
-This workshop uses Virtualbox as a practice lab environment for the training. 
-Vagrant is used to manage the Virtualbox VM.
-
-YOU DO NOT NEED VIRTUALBOX OR VAGRANT FOR THE FINAL HPC DEPLOYMENT
-
-Vagrant and Virtualbox are used for the training lab.
 ```
 
 
@@ -103,12 +92,17 @@ _* results may vary_
     *   Your familiarity with the HPC design being implemented here
     *   Your willingness to plan before executing (looking before you leap, crawl before you walk, read before you write, live before you die, etc.)
 
-        ```
+
+```
+TIP: READ the instructions carefully!
+Make sure you understand them before executing them - if you make a mistake, you need to know what happened so you can fix it!
+
+
+```
 TIP: READ the instructions carefully!
 Make sure you understand them before executing them! 
 If you make a mistake or get stuck know what happened!
 ```
-
 
 
 
