@@ -1,4 +1,4 @@
-<!----- Conversion time: 1.695 seconds.
+<!----- Conversion time: 2.07 seconds.
 
 
 Using this Markdown file:
@@ -11,7 +11,7 @@ Using this Markdown file:
 Conversion notes:
 
 * Docs to Markdown version 1.0β17
-* Thu Jun 27 2019 02:36:11 GMT-0700 (PDT)
+* Thu Jun 27 2019 02:37:27 GMT-0700 (PDT)
 * Source doc: https://docs.google.com/open?id=1Aeez_p2ebRwVGbIh5KVImHIzmNWfE_P2f5M2tK1jAIg
 ----->
 
@@ -124,13 +124,17 @@ Vagrant is used to manage the Virtualbox VM - it will configure the VM to precis
 
 1. Download & install Vagrant from [https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html) 
 
-    ```
+
+```
 TIP: There are two options for obtaining the testbed VM settings:
-1. Use git to clone the HPC Ecosystems OpenHPC repository
-2. Directly copy the Vagrant configuration files.
+
+
 ```
 
 
+
+1. <code><em>Use git to clone the HPC Ecosystems OpenHPC repository (recommended)</em></code>
+2. <code><em>Directly copy the Vagrant configuration files</em></code>
 
 
 ### Option 1 (RECOMMENDED): Clone git repository (YOU MUST HAVE GIT INSTALLED)
