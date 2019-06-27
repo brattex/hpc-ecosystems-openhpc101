@@ -1,4 +1,4 @@
-<!----- Conversion time: 2.007 seconds.
+<!----- Conversion time: 1.722 seconds.
 
 
 Using this Markdown file:
@@ -11,7 +11,7 @@ Using this Markdown file:
 Conversion notes:
 
 * Docs to Markdown version 1.0β17
-* Thu Jun 27 2019 02:41:48 GMT-0700 (PDT)
+* Thu Jun 27 2019 02:46:45 GMT-0700 (PDT)
 * Source doc: https://docs.google.com/open?id=1Aeez_p2ebRwVGbIh5KVImHIzmNWfE_P2f5M2tK1jAIg
 ----->
 
@@ -96,12 +96,6 @@ _* results may vary_
 ```
 TIP: READ the instructions carefully!
 Make sure you understand them before executing them - if you make a mistake, you need to know what happened so you can fix it!
-
-
-```
-TIP: READ the instructions carefully!
-Make sure you understand them before executing them! 
-If you make a mistake or get stuck know what happened!
 ```
 
 
@@ -129,14 +123,10 @@ Vagrant is used to manage the Virtualbox VM - it will configure the VM to precis
 
 ```
 TIP: There are two options for obtaining the testbed VM settings:
-
-
+o Use git to clone the HPC Ecosystems OpenHPC repository (recommended)
+o Directly copy the Vagrant configuration files
 ```
 
-
-
-1. <code><em>Use git to clone the HPC Ecosystems OpenHPC repository (recommended)</em></code>
-2. <code><em>Directly copy the Vagrant configuration files</em></code>
 
 
 ### Option 1 (RECOMMENDED): Clone git repository (YOU MUST HAVE GIT INSTALLED)
@@ -197,17 +187,8 @@ This option will not use git for the workshop. This will not synchronise with th
 
 ```
 HINT: There are TWO configuration files
-
-
-```
-
-
-
-*   <code><em>input.local - advanced customisation of the final system (FINAL SYSTEM)</em></code>
-*   <code><em>setenv.c - simple customisation for the DEMO system</em></code>
-
-
-```
+o input.local - advanced customisation of the final system (FINAL SYSTEM)
+o setenv.c - simple customisation for the DEMO system
 to 'source' the input.local file (i.e. to load into OS environment memory) -
 source input.local
 
