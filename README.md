@@ -208,7 +208,7 @@ CentOS 7 x86_64: Install guide with xCAT (Stateless) + Slurm (PDF)
             ```
 
 
-HINT: /vagrant is not the same as /home/vagrant
+HINT: /vagrant is not the same as /home/vagrant ...
 ```
 
 
