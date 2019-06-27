@@ -54,7 +54,7 @@ The custom modifications include:
 
 1. tmux ; vim ; git 
 2. input.local (from OpenHPC) with custom edits which do not need to be replicated
-3. setenv.sh
+3. setenv.c
 
 _* results may vary_
 
@@ -171,13 +171,15 @@ This option will not use git for the workshop. This will not synchronise with th
 HINT: there are two configuration files
 
 input.local - advanced customisation of the final system
-setenv.sh - simple customisation for the demo system
+setenv.c - simple customisation for the demo system
 
-to 'source' the input.local file - ". input.local"
+to 'source' the input.local file - "source input.local"
 
-That is (DOT) (SPACE) (FILENAME)
+That is (SOURCE) (SPACE) (FILENAME)
 
-. ./setenv.sh
+source ./setenv.c
+
+After this command, the ENVIRONMENT VARIABLES are updated with the parameters specified in input.local or setenv.c
 ```
 
 
@@ -199,21 +201,21 @@ CentOS 7 x86_64: Install guide with xCAT (Stateless) + Slurm (PDF)
         4. <code><em>![](images/[2019-06-27 10_20_51-openHPC.png](https://github.com/brattex/hpc-ecosystems-openhpc101/blob/master/images/2019-06-27%2010_20_51-openHPC.png)?raw=true)</em></code>
         5. <code><em>![](images/2019-06-27 10_22_12-vagrant@localhost__vagrant.png?raw=true)</em></code>
         6. <em>HINT: <strong>/vagrant</strong> is not the same as <strong>/home/vagrant …</strong></em>
-8. Either <em>directly on the VM</em> or <em>through the Vagrant shared directory</em>, edit the base image template <strong><del>input.local</del> setenv.sh</strong>
-    9. The base image template is named <strong>input.local </strong>and is downloaded from OpenHPC Docs or from the git repository below (it is recommended to download the git repository version because this has been modified slightly for HPC Ecosystems sites). The simplified version is <strong>setenv.sh</strong>.
-    10. HINT: for simplicity, we recommend to use setenv.sh for the workshop because it has a simplified list of parameters
-*   download  <strong><del>input.local</del> setenv.sh</strong> from the link below and save it in<strong> <em>/vagrant</em></strong> (which is accessible in the VM): [https://github.com/brattex/hpc-ecosystems-openhpc101](https://github.com/brattex/hpc-ecosystems-openhpc101)
+8. Either <em>directly on the VM</em> or <em>through the Vagrant shared directory</em>, edit the base image template <strong><del>input.local</del> setenv.c</strong>
+    9. The base image template is named <strong>input.local </strong>and is downloaded from OpenHPC Docs or from the git repository below (it is recommended to download the git repository version because this has been modified slightly for HPC Ecosystems sites). The simplified version is <strong>setenv.c</strong>.
+    10. HINT: for simplicity, we recommend to use setenv.c for the workshop because it has a simplified list of parameters
+*   download  <strong><del>input.local</del> setenv.c</strong> from the link below and save it in<strong> <em>/vagrant</em></strong> (which is accessible in the VM): [https://github.com/brattex/hpc-ecosystems-openhpc101](https://github.com/brattex/hpc-ecosystems-openhpc101)
     11. Change appropriate parameters after the “-” symbol in the configuration file
         7. You do not need to be concerned about uncommenting what is not needed for your particular environment; this base image template is used by <strong>recipe.sh</strong> for automated installations and will check all the parameters before installing anything.
         8. In our case, we are doing the steps run in <strong>recipe.sh</strong> manually, and only the relevant global parameters for your chosen configuration will be used.
         9. HINT: You do not need to change any settings for the training workshop - but it is a good idea to change the <strong>sms_name</strong>.
             1. Once updated, within the VM run
-            2. <code>. ./setenv.sh</code>
+            2. <code>. ./setenv.c</code>
             3. and verify your new sms_name setting by
             4. <code>echo $sms_name</code>
-            5. This should display the name you set in <strong>setenv.sh</strong>
+            5. This should display the name you set in <strong>setenv.c</strong>
     12. <strong>NOTE: You must carefully plan your system design before making changes to this file - a few <span style="text-decoration:underline;">minutes</span> of planning will save you <span style="text-decoration:underline;">days</span> of debugging!</strong>
-    13. SOURCE your configuration file (setenv.sh or input.local) when you are ready to load the parameters into your current shell session..
+    13. SOURCE your configuration file (setenv.c or input.local) when you are ready to load the parameters into your current shell session..
 9. Follow the OpenHPC guide that you have selected from [https://openhpc.community/downloads/](https://openhpc.community/downloads/) (above)
 
 
