@@ -59,9 +59,6 @@ The custom modifications include:
 _* results may vary_
 
 
-## 
-
-
 ## Useful addenda & Tips
 
 
@@ -77,7 +74,9 @@ _* results may vary_
     *   Your willingness to plan before executing (looking before you leap, crawl before you walk, read before you write, live before you die, etc.)
 
         ```
-TIP: READ the instructions carefully and make sure you understand them before executing them! If you make a mistake or get stuck, you need to know what you have done and what should have happened in order to fix it or troubleshoot!
+TIP: READ the instructions carefully!
+Make sure you understand them before executing them! 
+If you make a mistake or get stuck know what happened!
 ```
 
 
@@ -88,12 +87,11 @@ TIP: READ the instructions carefully and make sure you understand them before ex
 
 ### Install Virtualbox
 
-Virtualbox is used to run the virtual cluster. We will concentrate on deploying the Management server as a VM (but it can also be used as the final solution, but this is mostly for interest and not recommended as a long-term solution). **_This is not required for the final HPC system. \
-_**
+Virtualbox is used to run the virtual cluster. We will concentrate on deploying the Management server as a VM (but it can also be used as the final solution, but this is mostly for interest and not recommended as a long-term solution). **_This is not required for the final HPC system._**
 
 
 
-1. [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
+*   [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
 
 
 ### Install Vagrant environment
@@ -113,9 +111,7 @@ Directly copy the Vagrant configuration files.
 
 
 
-### Option 1 (RECOMMENDED):  \
-Clone git repository to local machine \
-(YOU MUST HAVE GIT INSTALLED)
+### Option 1 (RECOMMENDED): Clone git repository (YOU MUST HAVE GIT INSTALLED)
 
 This option will keep all updates or changes synchronised with your system. This is the best long-term solution for the workshop.
 
@@ -125,8 +121,7 @@ This option will keep all updates or changes synchronised with your system. This
     1. gitbash for Windows [https://gitforwindows.org/](https://gitforwindows.org/)
     2. git for Linux
     3. git for MacOS
-2. (from location of git root - where you want to run the workshop files on your system; \
-e.g. \users\myname\desktop\openhpcworkshop\)
+2. (from location of git root - where you want to run the workshop files on your system; e.g. **\users\myname\desktop\openhpcworkshop\**)
 3. git init
 4. git remote add origin [https://github.com/brattex/hpc-ecosystems-openhpc101.git](https://github.com/brattex/hpc-ecosystems-openhpc101.git)
 5. git pull origin master
@@ -146,9 +141,6 @@ This option will not use git for the workshop. This will not synchronise with th
 
     [https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/Vagrantfile](https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/Vagrantfile) (note, save file as **Vagrantfile** with no file extensions)
 
-
-
-### 
 
 
 ### Deploy HPC Ecosystems OpenHPC SMShost
@@ -204,47 +196,24 @@ CentOS 7 x86_64: Install guide with xCAT (Stateless) + Slurm (PDF)
     8. _It is a useful approach to store this PDF in the **/vagrant **shared directory_
         2. The shared directory _on the VM_ is located at **/vagrant.**
         3. The shared directory _on your host machine_ is located in the head/root of the directory structure that hosts the VM, and will be the same path as the location for the **Vagrantfile** you downloaded earlier _(e.g. /openhpc/smshost/)_
-
-            ```
-
-
-HINT: /vagrant is not the same as /home/vagrant
-```
-
-
-8. Either _directly on the VM_ or _through the Vagrant shared directory_, edit the base image template **~~input.local~~ setenv.sh**
-    9. The base image template is named **input.local **and is downloaded from OpenHPC Docs or from the git repository below (it is recommended to download the git repository version because this has been modified slightly for HPC Ecosystems sites). The simplified version is **setenv.sh**. \
-
-
-        ```
-HINT: for simplicity, we recommend to use setenv.sh for the workshop because it has a simplified list of parameters
-```
-
-
-        4. download  **~~input.local~~ setenv.sh** from the link below and save it in **/vagrant **(which is accessible in the VM): [https://github.com/brattex/hpc-ecosystems-openhpc101](https://github.com/brattex/hpc-ecosystems-openhpc101)
-    10. Change appropriate parameters after the “-” symbol in the configuration file \
-
-        5. You do not need to be concerned about uncommenting what is not needed for your particular environment; this base image template is used by **recipe.sh** for automated installations and will check all the parameters before installing anything.
-        6. In our case, we are doing the steps run in **recipe.sh** manually, and only the relevant global parameters for your chosen configuration will be used. \
-
-
-            ```
-HINT: You do not need to change any settings for the training workshop - but it is a good idea to change the sms_name.
-
-Once updated, within the VM run 
-
-. ./setenv.sh
-
-and verify your new sms_name setting by
-
-echo $sms_name
-
-This should display the name you set in setenv.sh
-```
-
-
-    11. **NOTE: You must carefully plan your system design before making changes to this file - a few <span style="text-decoration:underline;">minutes</span> of planning will save you <span style="text-decoration:underline;">days</span> of debugging!**
-    12. SOURCE your configuration file (setenv.sh or input.local) when you are ready to load the parameters into your current shell session..
+        4. <code><em>![](images/[2019-06-27 10_20_51-openHPC.png](https://github.com/brattex/hpc-ecosystems-openhpc101/blob/master/images/2019-06-27%2010_20_51-openHPC.png)?raw=true)</em></code>
+        5. <code><em>![](images/2019-06-27 10_22_12-vagrant@localhost__vagrant.png?raw=true)</em></code>
+        6. <em>HINT: <strong>/vagrant</strong> is not the same as <strong>/home/vagrant …</strong></em>
+8. Either <em>directly on the VM</em> or <em>through the Vagrant shared directory</em>, edit the base image template <strong><del>input.local</del> setenv.sh</strong>
+    9. The base image template is named <strong>input.local </strong>and is downloaded from OpenHPC Docs or from the git repository below (it is recommended to download the git repository version because this has been modified slightly for HPC Ecosystems sites). The simplified version is <strong>setenv.sh</strong>.
+    10. HINT: for simplicity, we recommend to use setenv.sh for the workshop because it has a simplified list of parameters
+*   download  <strong><del>input.local</del> setenv.sh</strong> from the link below and save it in<strong> <em>/vagrant</em></strong> (which is accessible in the VM): [https://github.com/brattex/hpc-ecosystems-openhpc101](https://github.com/brattex/hpc-ecosystems-openhpc101)
+    11. Change appropriate parameters after the “-” symbol in the configuration file
+        7. You do not need to be concerned about uncommenting what is not needed for your particular environment; this base image template is used by <strong>recipe.sh</strong> for automated installations and will check all the parameters before installing anything.
+        8. In our case, we are doing the steps run in <strong>recipe.sh</strong> manually, and only the relevant global parameters for your chosen configuration will be used.
+        9. HINT: You do not need to change any settings for the training workshop - but it is a good idea to change the <strong>sms_name</strong>.
+            1. Once updated, within the VM run
+            2. <code>. ./setenv.sh</code>
+            3. and verify your new sms_name setting by
+            4. <code>echo $sms_name</code>
+            5. This should display the name you set in <strong>setenv.sh</strong>
+    12. <strong>NOTE: You must carefully plan your system design before making changes to this file - a few <span style="text-decoration:underline;">minutes</span> of planning will save you <span style="text-decoration:underline;">days</span> of debugging!</strong>
+    13. SOURCE your configuration file (setenv.sh or input.local) when you are ready to load the parameters into your current shell session..
 9. Follow the OpenHPC guide that you have selected from [https://openhpc.community/downloads/](https://openhpc.community/downloads/) (above)
 
 
@@ -253,14 +222,12 @@ This should display the name you set in setenv.sh
 
 
 10. Included in github are two virtual clients to test with the SMS host (under openhpc client vms/)
-    13. OpenHPC Client 00
-        7. Virtual MAC address 080027F9F3B1 (internal network ‘hpcnet’)
-    14. OpenHPC Client 01
-        8. Virtual MAC address 080027F59A31 (internal network ‘hpcnet’)
+    14. OpenHPC Client 00
+        10. Virtual MAC address 080027F9F3B1 (internal network ‘hpcnet’)
+    15. OpenHPC Client 01
+        11. Virtual MAC address 080027F59A31 (internal network ‘hpcnet’)
 11. Both clients are Virtualbox VMs ready to accept a 64bit RHEL-type OS with 1GB RAM and 8GB dynamic disk. Default to PXE boot.
-    15. NOTE: As of v1.3.7 the clients must have **2GB of RAM** - you can edit this within Virtualbox via **Settings → System → Base Memory**
-
-
+    16. NOTE: As of v1.3.7 the clients must have **2GB of RAM** - you can edit this within Virtualbox via **Settings → System → Base Memory**
 
 
 ## OpenHPC Example walkthrough
