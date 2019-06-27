@@ -1,4 +1,4 @@
-<!----- Conversion time: 1.737 seconds.
+<!----- Conversion time: 1.574 seconds.
 
 
 Using this Markdown file:
@@ -11,7 +11,7 @@ Using this Markdown file:
 Conversion notes:
 
 * Docs to Markdown version 1.0β17
-* Thu Jun 27 2019 02:28:39 GMT-0700 (PDT)
+* Thu Jun 27 2019 02:31:03 GMT-0700 (PDT)
 * Source doc: https://docs.google.com/open?id=1Aeez_p2ebRwVGbIh5KVImHIzmNWfE_P2f5M2tK1jAIg
 ----->
 
@@ -235,15 +235,18 @@ CentOS 7 x86_64: Install guide with xCAT (Stateless) + Slurm (PDF)
             !~
             ![](images/2019-06-27_openHPC.png?raw=true)
 
-
-            ![vagrant shared folder on host](images/2019-06-27_localhost.png?raw=true)
-            ![vagrant shared folder on VM](images/2019-06-27_openHPC.png)
-
             ```
 
 
+asdasd
 
-8. Either _directly on the VM_ or _through the Vagrant shared directory_, edit the base image template **~~input.local~~ setenv.c**
+![vagrant shared folder on host](images/2019-06-27_localhost.png?raw=true)
+
+![vagrant shared folder on VM](images/2019-06-27_openHPC.png)
+
+
+
+1. Either _directly on the VM_ or _through the Vagrant shared directory_, edit the base image template **~~input.local~~ setenv.c**
     9. The base image template is named **input.local **and is downloaded from OpenHPC Docs or from the git repository below (it is recommended to download the git repository version because this has been modified slightly for HPC Ecosystems sites). The simplified version is **setenv.c**.
     10. HINT: for simplicity, we recommend to use setenv.c for the workshop because it has a simplified list of parameters
 *   download  **~~input.local~~ setenv.c** from the link below and save it in** _/vagrant_** (which is accessible in the VM): [https://github.com/brattex/hpc-ecosystems-openhpc101](https://github.com/brattex/hpc-ecosystems-openhpc101)
@@ -258,19 +261,19 @@ CentOS 7 x86_64: Install guide with xCAT (Stateless) + Slurm (PDF)
             5. This should display the name you set in **setenv.c**
     12. **NOTE: You must carefully plan your system design before making changes to this file - a few <span style="text-decoration:underline;">minutes</span> of planning will save you <span style="text-decoration:underline;">days</span> of debugging!**
     13. SOURCE your configuration file (setenv.c or input.local) when you are ready to load the parameters into your current shell session..
-9. Follow the OpenHPC guide that you have selected from [https://openhpc.community/downloads/](https://openhpc.community/downloads/) (above)
+8. Follow the OpenHPC guide that you have selected from [https://openhpc.community/downloads/](https://openhpc.community/downloads/) (above)
 
 
 ## Install and prepare OpenHPC HPC vClients Host
 
 
 
-10. Included in github are two virtual clients to test with the SMS host (under openhpc client vms/)
+9. Included in github are two virtual clients to test with the SMS host (under openhpc client vms/)
     14. OpenHPC Client 00
         8. Virtual MAC address 080027F9F3B1 (internal network ‘hpcnet’)
     15. OpenHPC Client 01
         9. Virtual MAC address 080027F59A31 (internal network ‘hpcnet’)
-11. Both clients are Virtualbox VMs ready to accept a 64bit RHEL-type OS with 1GB RAM and 8GB dynamic disk. Default to PXE boot.
+10. Both clients are Virtualbox VMs ready to accept a 64bit RHEL-type OS with 1GB RAM and 8GB dynamic disk. Default to PXE boot.
     16. NOTE: As of v1.3.7 the clients must have **2GB of RAM** - you can edit this within Virtualbox via **Settings → System → Base Memory**
 
 
