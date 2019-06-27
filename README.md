@@ -206,6 +206,8 @@ CentOS 7 x86_64: Install guide with xCAT (Stateless) + Slurm (PDF)
         3. The shared directory _on your host machine_ is located in the head/root of the directory structure that hosts the VM, and will be the same path as the location for the **Vagrantfile** you downloaded earlier _(e.g. /openhpc/smshost/)_
 
             ```
+![](images/2019-06-27 10_20_51-openHPC.png?raw=true)
+
 
 
 HINT: /vagrant is not the same as /home/vagrant ...
