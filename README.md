@@ -201,30 +201,19 @@ CentOS 7 x86_64: Install guide with xCAT (Stateless) + Slurm (PDF)
         6. <em>HINT: <strong>/vagrant</strong> is not the same as <strong>/home/vagrant …</strong></em>
 8. Either <em>directly on the VM</em> or <em>through the Vagrant shared directory</em>, edit the base image template <strong><del>input.local</del> setenv.sh</strong>
     9. The base image template is named <strong>input.local </strong>and is downloaded from OpenHPC Docs or from the git repository below (it is recommended to download the git repository version because this has been modified slightly for HPC Ecosystems sites). The simplified version is <strong>setenv.sh</strong>.
-
-        ```
-HINT: for simplicity, we recommend to use setenv.sh for the workshop because it has a simplified list of parameters
-```
-
-
+    10. HINT: for simplicity, we recommend to use setenv.sh for the workshop because it has a simplified list of parameters
 *   download  <strong><del>input.local</del> setenv.sh</strong> from the link below and save it in<strong> <em>/vagrant</em></strong> (which is accessible in the VM): [https://github.com/brattex/hpc-ecosystems-openhpc101](https://github.com/brattex/hpc-ecosystems-openhpc101)
-    10. Change appropriate parameters after the “-” symbol in the configuration file
+    11. Change appropriate parameters after the “-” symbol in the configuration file
         7. You do not need to be concerned about uncommenting what is not needed for your particular environment; this base image template is used by <strong>recipe.sh</strong> for automated installations and will check all the parameters before installing anything.
         8. In our case, we are doing the steps run in <strong>recipe.sh</strong> manually, and only the relevant global parameters for your chosen configuration will be used.
-
-            ```
-HINT: You do not need to change any settings for the training workshop - but it is a good idea to change the sms_name.
-
-Once updated, within the VM run 
-. ./setenv.sh
-and verify your new sms_name setting by
-echo $sms_name
-This should display the name you set in setenv.sh
-```
-
-
-    11. <strong>NOTE: You must carefully plan your system design before making changes to this file - a few <span style="text-decoration:underline;">minutes</span> of planning will save you <span style="text-decoration:underline;">days</span> of debugging!</strong>
-    12. SOURCE your configuration file (setenv.sh or input.local) when you are ready to load the parameters into your current shell session..
+        9. HINT: You do not need to change any settings for the training workshop - but it is a good idea to change the <strong>sms_name</strong>.
+            1. Once updated, within the VM run
+            2. <code>. ./setenv.sh</code>
+            3. and verify your new sms_name setting by
+            4. <code>echo $sms_name</code>
+            5. This should display the name you set in <strong>setenv.sh</strong>
+    12. <strong>NOTE: You must carefully plan your system design before making changes to this file - a few <span style="text-decoration:underline;">minutes</span> of planning will save you <span style="text-decoration:underline;">days</span> of debugging!</strong>
+    13. SOURCE your configuration file (setenv.sh or input.local) when you are ready to load the parameters into your current shell session..
 9. Follow the OpenHPC guide that you have selected from [https://openhpc.community/downloads/](https://openhpc.community/downloads/) (above)
 
 
@@ -233,12 +222,12 @@ This should display the name you set in setenv.sh
 
 
 10. Included in github are two virtual clients to test with the SMS host (under openhpc client vms/)
-    13. OpenHPC Client 00
-        9. Virtual MAC address 080027F9F3B1 (internal network ‘hpcnet’)
-    14. OpenHPC Client 01
-        10. Virtual MAC address 080027F59A31 (internal network ‘hpcnet’)
+    14. OpenHPC Client 00
+        10. Virtual MAC address 080027F9F3B1 (internal network ‘hpcnet’)
+    15. OpenHPC Client 01
+        11. Virtual MAC address 080027F59A31 (internal network ‘hpcnet’)
 11. Both clients are Virtualbox VMs ready to accept a 64bit RHEL-type OS with 1GB RAM and 8GB dynamic disk. Default to PXE boot.
-    15. NOTE: As of v1.3.7 the clients must have **2GB of RAM** - you can edit this within Virtualbox via **Settings → System → Base Memory**
+    16. NOTE: As of v1.3.7 the clients must have **2GB of RAM** - you can edit this within Virtualbox via **Settings → System → Base Memory**
 
 
 ## OpenHPC Example walkthrough
