@@ -1,4 +1,4 @@
-<!----- Conversion time: 1.596 seconds.
+<!----- Conversion time: 1.695 seconds.
 
 
 Using this Markdown file:
@@ -11,7 +11,7 @@ Using this Markdown file:
 Conversion notes:
 
 * Docs to Markdown version 1.0β17
-* Thu Jun 27 2019 02:32:51 GMT-0700 (PDT)
+* Thu Jun 27 2019 02:36:11 GMT-0700 (PDT)
 * Source doc: https://docs.google.com/open?id=1Aeez_p2ebRwVGbIh5KVImHIzmNWfE_P2f5M2tK1jAIg
 ----->
 
@@ -190,6 +190,28 @@ This option will not use git for the workshop. This will not synchronise with th
 
 
 ```
+HINT: There are TWO configuration files
+
+
+```
+
+
+
+*   <code><em>input.local - advanced customisation of the final system (FINAL SYSTEM)</em></code>
+*   <code><em>setenv.c - simple customisation for the DEMO system</em></code>
+
+
+```
+to 'source' the input.local file (i.e. to load into OS environment memory) -
+source input.local
+
+to 'source' the setenv.c file (to load into environment memory) - 
+source setenv.c
+
+AFTER THE COMMAND THE ENVIRONMENT VARIABLES (YOUR SETTINGS THAT YOU DEFINED IN THE FILE) ARE UPDATED.
+
+
+```
 HINT: there are two configuration files
 
 input.local - advanced customisation of the final system
@@ -216,11 +238,7 @@ After this command, the ENVIRONMENT VARIABLES are updated with the parameters sp
 ```
 CentOS 7 x86_64: Install guide with xCAT (Stateless) + SLURM (PDF)
 
-
 ```
-CentOS 7 x86_64: Install guide with xCAT (Stateless) + Slurm (PDF)
-```
-
 
 
 
@@ -240,11 +258,12 @@ CentOS 7 x86_64: Install guide with xCAT (Stateless) + Slurm (PDF)
 
 
 
-1. Either _directly on the VM_ or _through the Vagrant shared directory_, edit the base image template **~~input.local~~ setenv.c**
-    9. The base image template is named **input.local **and is downloaded from OpenHPC Docs or from the git repository below (it is recommended to download the git repository version because this has been modified slightly for HPC Ecosystems sites). The simplified version is **setenv.c**.
-    10. HINT: for simplicity, we recommend to use setenv.c for the workshop because it has a simplified list of parameters
+1. Either _directly on the VM_ or _through the Vagrant shared directory_, edit the base image template **~~input.local~~ setenv.c** \
+
+    1. The base image template is named **input.local **and is downloaded from OpenHPC Docs or from the git repository below (it is recommended to download the git repository version because this has been modified slightly for HPC Ecosystems sites). **The simplified version is setenv.c.**
+    9. HINT: for simplicity, we recommend to use setenv.c for the workshop because it has a simplified list of parameters
 *   download  **~~input.local~~ setenv.c** from the link below and save it in** _/vagrant_** (which is accessible in the VM): [https://github.com/brattex/hpc-ecosystems-openhpc101](https://github.com/brattex/hpc-ecosystems-openhpc101)
-    11. Change appropriate parameters after the “-” symbol in the configuration file
+    10. Change appropriate parameters after the “-” symbol in the configuration file
         4. You do not need to be concerned about uncommenting what is not needed for your particular environment; this base image template is used by **recipe.sh** for automated installations and will check all the parameters before installing anything.
         5. In our case, we are doing the steps run in **recipe.sh** manually, and only the relevant global parameters for your chosen configuration will be used.
         6. HINT: You do not need to change any settings for the training workshop - but it is a good idea to change the **sms_name**.
@@ -253,8 +272,8 @@ CentOS 7 x86_64: Install guide with xCAT (Stateless) + Slurm (PDF)
             3. and verify your new sms_name setting by
             4. `echo $sms_name`
             5. This should display the name you set in **setenv.c**
-    12. **NOTE: You must carefully plan your system design before making changes to this file - a few <span style="text-decoration:underline;">minutes</span> of planning will save you <span style="text-decoration:underline;">days</span> of debugging!**
-    13. SOURCE your configuration file (setenv.c or input.local) when you are ready to load the parameters into your current shell session..
+    11. **NOTE: You must carefully plan your system design before making changes to this file - a few <span style="text-decoration:underline;">minutes</span> of planning will save you <span style="text-decoration:underline;">days</span> of debugging!**
+    12. SOURCE your configuration file (setenv.c or input.local) when you are ready to load the parameters into your current shell session..
 8. Follow the OpenHPC guide that you have selected from [https://openhpc.community/downloads/](https://openhpc.community/downloads/) (above)
 
 
@@ -263,12 +282,12 @@ CentOS 7 x86_64: Install guide with xCAT (Stateless) + Slurm (PDF)
 
 
 9. Included in github are two virtual clients to test with the SMS host (under openhpc client vms/)
-    14. OpenHPC Client 00
+    13. OpenHPC Client 00
         7. Virtual MAC address 080027F9F3B1 (internal network ‘hpcnet’)
-    15. OpenHPC Client 01
+    14. OpenHPC Client 01
         8. Virtual MAC address 080027F59A31 (internal network ‘hpcnet’)
 10. Both clients are Virtualbox VMs ready to accept a 64bit RHEL-type OS with 1GB RAM and 8GB dynamic disk. Default to PXE boot.
-    16. NOTE: As of v1.3.7 the clients must have **2GB of RAM** - you can edit this within Virtualbox via **Settings → System → Base Memory**
+    15. NOTE: As of v1.3.7 the clients must have **2GB of RAM** - you can edit this within Virtualbox via **Settings → System → Base Memory**
 
 
 ## OpenHPC Example walkthrough
