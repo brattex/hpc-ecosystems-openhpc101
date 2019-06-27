@@ -59,9 +59,6 @@ The custom modifications include:
 _* results may vary_
 
 
-## 
-
-
 ## Useful addenda & Tips
 
 
@@ -77,7 +74,9 @@ _* results may vary_
     *   Your willingness to plan before executing (looking before you leap, crawl before you walk, read before you write, live before you die, etc.)
 
         ```
-TIP: READ the instructions carefully and make sure you understand them before executing them! If you make a mistake or get stuck, you need to know what you have done and what should have happened in order to fix it or troubleshoot!
+TIP: READ the instructions carefully!
+Make sure you understand them before executing them! 
+If you make a mistake or get stuck know what happened!
 ```
 
 
@@ -88,12 +87,11 @@ TIP: READ the instructions carefully and make sure you understand them before ex
 
 ### Install Virtualbox
 
-Virtualbox is used to run the virtual cluster. We will concentrate on deploying the Management server as a VM (but it can also be used as the final solution, but this is mostly for interest and not recommended as a long-term solution). **_This is not required for the final HPC system. \
-_**
+Virtualbox is used to run the virtual cluster. We will concentrate on deploying the Management server as a VM (but it can also be used as the final solution, but this is mostly for interest and not recommended as a long-term solution). **_This is not required for the final HPC system._**
 
 
 
-1. [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
+*   [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
 
 
 ### Install Vagrant environment
@@ -113,9 +111,7 @@ Directly copy the Vagrant configuration files.
 
 
 
-### Option 1 (RECOMMENDED):  \
-Clone git repository to local machine \
-(YOU MUST HAVE GIT INSTALLED)
+### Option 1 (RECOMMENDED): Clone git repository (YOU MUST HAVE GIT INSTALLED)
 
 This option will keep all updates or changes synchronised with your system. This is the best long-term solution for the workshop.
 
@@ -125,8 +121,7 @@ This option will keep all updates or changes synchronised with your system. This
     1. gitbash for Windows [https://gitforwindows.org/](https://gitforwindows.org/)
     2. git for Linux
     3. git for MacOS
-2. (from location of git root - where you want to run the workshop files on your system; \
-e.g. \users\myname\desktop\openhpcworkshop\)
+2. (from location of git root - where you want to run the workshop files on your system; e.g. **\users\myname\desktop\openhpcworkshop\**)
 3. git init
 4. git remote add origin [https://github.com/brattex/hpc-ecosystems-openhpc101.git](https://github.com/brattex/hpc-ecosystems-openhpc101.git)
 5. git pull origin master
@@ -146,9 +141,6 @@ This option will not use git for the workshop. This will not synchronise with th
 
     [https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/Vagrantfile](https://raw.githubusercontent.com/brattex/hpc-ecosystems-openhpc101/master/Vagrantfile) (note, save file as **Vagrantfile** with no file extensions)
 
-
-
-### 
 
 
 ### Deploy HPC Ecosystems OpenHPC SMShost
@@ -214,20 +206,18 @@ HINT: /vagrant is not the same as /home/vagrant ...
 
 
 8. Either _directly on the VM_ or _through the Vagrant shared directory_, edit the base image template **~~input.local~~ setenv.sh**
-    9. The base image template is named **input.local **and is downloaded from OpenHPC Docs or from the git repository below (it is recommended to download the git repository version because this has been modified slightly for HPC Ecosystems sites). The simplified version is **setenv.sh**. \
-
+    9. The base image template is named **input.local **and is downloaded from OpenHPC Docs or from the git repository below (it is recommended to download the git repository version because this has been modified slightly for HPC Ecosystems sites). The simplified version is **setenv.sh**.
 
         ```
 HINT: for simplicity, we recommend to use setenv.sh for the workshop because it has a simplified list of parameters
 ```
 
 
-        4. download  **~~input.local~~ setenv.sh** from the link below and save it in **/vagrant **(which is accessible in the VM): [https://github.com/brattex/hpc-ecosystems-openhpc101](https://github.com/brattex/hpc-ecosystems-openhpc101)
+*   download  **~~input.local~~ setenv.sh** from the link below and save it in **/vagrant **(which is accessible in the VM): [https://github.com/brattex/hpc-ecosystems-openhpc101](https://github.com/brattex/hpc-ecosystems-openhpc101)
     10. Change appropriate parameters after the “-” symbol in the configuration file \
 
-        5. You do not need to be concerned about uncommenting what is not needed for your particular environment; this base image template is used by **recipe.sh** for automated installations and will check all the parameters before installing anything.
-        6. In our case, we are doing the steps run in **recipe.sh** manually, and only the relevant global parameters for your chosen configuration will be used. \
-
+        4. You do not need to be concerned about uncommenting what is not needed for your particular environment; this base image template is used by **recipe.sh** for automated installations and will check all the parameters before installing anything.
+        5. In our case, we are doing the steps run in **recipe.sh** manually, and only the relevant global parameters for your chosen configuration will be used.
 
             ```
 HINT: You do not need to change any settings for the training workshop - but it is a good idea to change the sms_name.
@@ -255,9 +245,9 @@ This should display the name you set in setenv.sh
 
 10. Included in github are two virtual clients to test with the SMS host (under openhpc client vms/)
     13. OpenHPC Client 00
-        7. Virtual MAC address 080027F9F3B1 (internal network ‘hpcnet’)
+        6. Virtual MAC address 080027F9F3B1 (internal network ‘hpcnet’)
     14. OpenHPC Client 01
-        8. Virtual MAC address 080027F59A31 (internal network ‘hpcnet’)
+        7. Virtual MAC address 080027F59A31 (internal network ‘hpcnet’)
 11. Both clients are Virtualbox VMs ready to accept a 64bit RHEL-type OS with 1GB RAM and 8GB dynamic disk. Default to PXE boot.
     15. NOTE: As of v1.3.7 the clients must have **2GB of RAM** - you can edit this within Virtualbox via **Settings → System → Base Memory**
 
