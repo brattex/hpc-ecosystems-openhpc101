@@ -1,4 +1,4 @@
-<!----- Conversion time: 1.574 seconds.
+<!----- Conversion time: 1.596 seconds.
 
 
 Using this Markdown file:
@@ -11,7 +11,7 @@ Using this Markdown file:
 Conversion notes:
 
 * Docs to Markdown version 1.0β17
-* Thu Jun 27 2019 02:31:03 GMT-0700 (PDT)
+* Thu Jun 27 2019 02:32:51 GMT-0700 (PDT)
 * Source doc: https://docs.google.com/open?id=1Aeez_p2ebRwVGbIh5KVImHIzmNWfE_P2f5M2tK1jAIg
 ----->
 
@@ -212,9 +212,16 @@ After this command, the ENVIRONMENT VARIABLES are updated with the parameters sp
     [https://openhpc.community/downloads/](https://openhpc.community/downloads/)
 
 
-    ```
+
+```
+CentOS 7 x86_64: Install guide with xCAT (Stateless) + SLURM (PDF)
+
+
+```
 CentOS 7 x86_64: Install guide with xCAT (Stateless) + Slurm (PDF)
 ```
+
+
 
 
     8. _It is a useful approach to store this PDF in the **/vagrant **shared directory_
@@ -222,23 +229,10 @@ CentOS 7 x86_64: Install guide with xCAT (Stateless) + Slurm (PDF)
         3. The shared directory _on your host machine_ is located in the head/root of the directory structure that hosts the VM, and will be the same path as the location for the **Vagrantfile** you downloaded earlier _(e.g. /openhpc/smshost/)_
 
             ```
-            ![](images/2019-06-27_localhost.png?raw=true)
-            ...
-            ![](images/2019-06-27_openHPC.png?raw=true)
-            ```
-
-
-        4. _HINT: **/vagrant** is not the same as **/home/vagrant …**_
-
-            ```
-            ![](images/2019-06-27_localhost.png?raw=true)
-            !~
-            ![](images/2019-06-27_openHPC.png?raw=true)
+            HINT: /vagrant is not the same as /home/vagrant!!
 
             ```
 
-
-asdasd
 
 ![vagrant shared folder on host](images/2019-06-27_localhost.png?raw=true)
 
@@ -251,9 +245,9 @@ asdasd
     10. HINT: for simplicity, we recommend to use setenv.c for the workshop because it has a simplified list of parameters
 *   download  **~~input.local~~ setenv.c** from the link below and save it in** _/vagrant_** (which is accessible in the VM): [https://github.com/brattex/hpc-ecosystems-openhpc101](https://github.com/brattex/hpc-ecosystems-openhpc101)
     11. Change appropriate parameters after the “-” symbol in the configuration file
-        5. You do not need to be concerned about uncommenting what is not needed for your particular environment; this base image template is used by **recipe.sh** for automated installations and will check all the parameters before installing anything.
-        6. In our case, we are doing the steps run in **recipe.sh** manually, and only the relevant global parameters for your chosen configuration will be used.
-        7. HINT: You do not need to change any settings for the training workshop - but it is a good idea to change the **sms_name**.
+        4. You do not need to be concerned about uncommenting what is not needed for your particular environment; this base image template is used by **recipe.sh** for automated installations and will check all the parameters before installing anything.
+        5. In our case, we are doing the steps run in **recipe.sh** manually, and only the relevant global parameters for your chosen configuration will be used.
+        6. HINT: You do not need to change any settings for the training workshop - but it is a good idea to change the **sms_name**.
             1. Once updated, within the VM run
             2. `. ./setenv.c`
             3. and verify your new sms_name setting by
@@ -270,9 +264,9 @@ asdasd
 
 9. Included in github are two virtual clients to test with the SMS host (under openhpc client vms/)
     14. OpenHPC Client 00
-        8. Virtual MAC address 080027F9F3B1 (internal network ‘hpcnet’)
+        7. Virtual MAC address 080027F9F3B1 (internal network ‘hpcnet’)
     15. OpenHPC Client 01
-        9. Virtual MAC address 080027F59A31 (internal network ‘hpcnet’)
+        8. Virtual MAC address 080027F59A31 (internal network ‘hpcnet’)
 10. Both clients are Virtualbox VMs ready to accept a 64bit RHEL-type OS with 1GB RAM and 8GB dynamic disk. Default to PXE boot.
     16. NOTE: As of v1.3.7 the clients must have **2GB of RAM** - you can edit this within Virtualbox via **Settings → System → Base Memory**
 
