@@ -3,16 +3,23 @@
 
 ---
 
-<h1 id="how-to-setup-openhpc.">HOW-TO: setup OpenHPC.</h1>
+<h1 id="how-to-set-up-openhpc.">HOW-TO: set up OpenHPC.</h1>
 <h3 id="an-introduction-to-openhpc-installation--configuration"><em>An Introduction to OpenHPC installation &amp; configuration</em></h3>
 <p>Bryan Johnston<br>
 20200203</p>
+<p>Keywords:</p>
+<ul>
+<li>OpenHPC</li>
+<li>HPC Ecosystems</li>
+<li>Virtual Lab</li>
+<li>Hands-on</li>
+</ul>
 <p><em>This guide was initially produced for  HPC Ecosystems sites.</em></p>
 <h2 id="quickstart">QUICKSTART</h2>
 <p><a href="#bookmark=id.r5m2h0l5cm7x">Jump to the hands-on practical steps by clicking here.</a></p>
 <p>(if link does not work, scroll to “Install and prepare testbed VM through Vagrant”)</p>
-<h3 id="lab-preparation----introduction">Lab Preparation – Introduction</h3>
-<p>This section provides a step-by-step guide for  setting up the Virtual Lab environment. The Virtual Lab will configure <strong>three lightweight virtual machines</strong> using the <strong>Virtualbox</strong> hypervisor.</p>
+<h3 id="lab-preparation----introduction">LAB PREPARATION – INTRODUCTION</h3>
+<p>This section provides a step-by-step guide for  setting up the Virtual Lab environment. The Virtual Lab will configure <strong>three lightweight virtual machines</strong> that will be used to create a <strong>Virtual Cluster</strong> using the <strong>Virtualbox</strong> hypervisor.</p>
 <pre><code>!! IMPORTANT !!
 
 This guide uses VIRTUALBOX for the virtual lab environment.
@@ -21,26 +28,34 @@ YOU DO NOT NEED VIRTUALBOX OR VAGRANT FOR THE FINAL HPC DEPLOYMENT.
 Vagrant and Virtualbox are used for the TRAINING LAB.
 </code></pre>
 <p>This training involves deploying an <strong>OpenHPC-ready Virtualbox VM using Vagrant</strong>. The sections of the guide include:</p>
-<ol>
-<li>Installing &amp; preparing the testbed VM through Vagrant</li>
-<li>Installing &amp; preparing OpenHPC software on VM</li>
-</ol>
-<p>Although this solution has not been tested on hypervisors other than Virtualbox, Vagrant deployment should allow for the same results on any hypervisor of your preference (e.g. VMware).</p>
-<p>The VM will be pre-configured with the standard software environment used in the hands-on workshop but can also be replicated at home, in your office, in a lab, or in the bath*.</p>
+<p><strong>1. Installing &amp; preparing the testbed VM through Vagrant<br>
+2. Installing &amp; preparing OpenHPC software on VM</strong></p>
+<p>Although this solution has not been tested on hypervisors other than <strong>Virtualbox</strong>, <strong>Vagrant</strong> deployment should allow for the same results on any hypervisor of your preference (e.g. <strong>VMware</strong>).</p>
+<p>The VM will be pre-configured with the standard software environment used in the hands-on workshop but can also be replicated at home, in the office, in a lab, or in the bath*.</p>
 <p>The custom modifications include:</p>
 <ol>
-<li>tmux ; vim ; git</li>
+<li>pre-installed <strong>tmux ; vim ; git</strong></li>
 <li>input.local (from OpenHPC) with custom edits which do not need to be replicated</li>
-<li>setenv.c</li>
+<li><strong>setenv.c</strong></li>
 </ol>
-<p><em>* results may vary</em></p>
-<h2 id="useful-addenda--tips">Useful addenda &amp; Tips</h2>
-<h3 id="workload-time">Workload Time</h3>
+<p><em>* results may vary if you run your virtual cluster in the bath</em></p>
+<h3 id="lab-preparation----pre-requisites">LAB PREPARATION – PRE-REQUISITES</h3>
+<p>It is assumed that you can answer “yes” to the following questions before attempting this guide:</p>
+<ol>
+<li>Do you know how to navigate to different directories using the Linux shell ?</li>
+<li>Have you installed packages via the Linux shell using <strong>yum</strong> ?</li>
+<li>Do you know how to <strong>stop/start services</strong> in Linux shell ?</li>
+<li>Do you understand basic principles of <strong>computer networking</strong> such as <strong>IPv4</strong>, <strong>PXE</strong> ?</li>
+<li>Do you know what <strong>High Performance Computing</strong> is, and why you are learning to install it?</li>
+</ol>
+<p>If you answered <em>no</em> to any of the previous questions, it may be worth revisiting the source of the question before proceeding.</p>
+<h2 id="useful-addenda--tips">USEFUL ADDENDA &amp; TIPS</h2>
+<h3 id="workload-time">WORKLOAD TIME</h3>
 <ul>
 <li>Download speeds aside (the CentOS image is approx. 600MB), it will take approx. <strong>10 to 15 minutes</strong> to complete the Vagrant installation and Virtualbox VM deployment.</li>
-<li>The actual time to configure the OpenHPC input.local and run through the guide will vary depending on
+<li>The actual time to configure the OpenHPC <strong>input.local</strong> and run through the guide will vary depending on
 <ul>
-<li>Your willingness to read the guide thoroughly before executing each step (HIGHLY RECOMMENDED)</li>
+<li>Your willingness to read the guide thoroughly before executing each step <strong>(HIGHLY RECOMMENDED)</strong></li>
 <li>Your familiarity with the instruction syntax and commands used</li>
 <li>Your familiarity with the HPC design being implemented here</li>
 <li>Your willingness to plan before executing (looking before you leap, crawl before you walk, read before you write, live before you die, etc.)</li>
@@ -48,15 +63,17 @@ Vagrant and Virtualbox are used for the TRAINING LAB.
 </li>
 </ul>
 <pre><code>TIP: READ the instructions carefully!
-Make sure you understand them before executing them - if you make a mistake, you need to know what happened so you can fix it!
+Make sure you understand them before executing them.
+You need to know what you've done so you can fix it when things fail!
 </code></pre>
-<h2 id="install-and-prepare-testbed-vm-through-vagrant">Install and prepare testbed VM through Vagrant</h2>
-<h3 id="install-virtualbox">Install Virtualbox</h3>
-<p>Virtualbox is used to run the virtual cluster. We will concentrate on deploying the Management server as a VM (but it can also be used as the final solution, but this is mostly for interest and not recommended as a long-term solution). <strong><em>This is not required for the final HPC system.</em></strong></p>
+<h2 id="install-and-prepare-testbed-vm-through-vagrant">INSTALL AND PREPARE TESTBED VM THROUGH VAGRANT</h2>
+<h3 id="install-virtualbox">INSTALL VIRTUALBOX</h3>
+<p><strong>Virtualbox</strong> is used to run the virtual cluster. We will concentrate on deploying the <em>Management server</em> as a VM (although it can also be used as the final solution, we do not recommend this as a long-term solution).<br>
+<strong><em>This is not required for the final HPC system.</em></strong></p>
 <ul>
 <li><a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></li>
 </ul>
-<h3 id="install-vagrant-environment">Install Vagrant environment</h3>
+<h3 id="install-vagrant-environment">INSTALL VAGRANT ENVIRONMENT</h3>
 <p>Vagrant is used to manage the Virtualbox VM - it will configure the VM to precise specifications for the workshop and makes sure everyone has the same setup. <strong><em>This is not required for the final HPC system.</em></strong></p>
 <ol>
 <li>Download &amp; install Vagrant from <a href="https://www.vagrantup.com/downloads.html">https://www.vagrantup.com/downloads.html</a></li>
