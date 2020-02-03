@@ -3,19 +3,20 @@
 
 ---
 
-<h2 id="how-to-setup-openhpc."><strong>HOW-TO: setup OpenHPC.</strong></h2>
-<h2 id="an-introduction-to-openhpc-installation--configuration-for-hpc-ecosystems-sites">An Introduction to OpenHPC installation &amp; configuration for HPC Ecosystems sites</h2>
-<p>Bryan Johnston</p>
-<p>20200203</p>
-<hr>
+<h1 id="how-to-setup-openhpc.">HOW-TO: setup OpenHPC.</h1>
+<h3 id="an-introduction-to-openhpc-installation--configuration"><em>An Introduction to OpenHPC installation &amp; configuration</em></h3>
+<p>Bryan Johnston<br>
+20200203</p>
+<p><em>This guide was initially produced for  HPC Ecosystems sites.</em></p>
 <h2 id="quickstart">QUICKSTART</h2>
 <p><a href="#bookmark=id.r5m2h0l5cm7x">Jump to the hands-on practical steps by clicking here.</a></p>
 <p>(if link does not work, scroll to “Install and prepare testbed VM through Vagrant”)</p>
-<h2 id="introduction">Introduction</h2>
-<p>This document will guide you through setting up a test environment for the HPC Ecosystems OpenHPC workshop.</p>
-<pre><code>IMPORTANT! 
-This workshop uses Virtualbox as a practice lab environment for the training.
-Vagrant is used to manage the Virtualbox VM.
+<h3 id="lab-preparation----introduction">Lab Preparation – Introduction</h3>
+<p>This section provides a step-by-step guide for  setting up the Virtual Lab environment. The Virtual Lab will configure <strong>three lightweight virtual machines</strong> using the <strong>Virtualbox</strong> hypervisor.</p>
+<pre><code>!! IMPORTANT !!
+
+This guide uses VIRTUALBOX for the virtual lab environment.
+VAGRANT is used to manage the Virtualbox VM's.
 YOU DO NOT NEED VIRTUALBOX OR VAGRANT FOR THE FINAL HPC DEPLOYMENT.
 Vagrant and Virtualbox are used for the TRAINING LAB.
 </code></pre>
