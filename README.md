@@ -6,7 +6,7 @@
 <h1 id="how-to-set-up-openhpc.">HOW-TO: set up OpenHPC.</h1>
 <h3 id="an-introduction-to-openhpc-installation--configuration"><em>An Introduction to OpenHPC installation &amp; configuration</em></h3>
 <p>Bryan Johnston<br>
-20200203</p>
+20200204</p>
 <p><em>This guide was initially produced for  HPC Ecosystems sites.</em></p>
 <p>Keywords:</p>
 
