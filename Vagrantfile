@@ -81,7 +81,7 @@ config.vm.provider "virtualbox" do |vb|
 config.vm.provision "shell", inline: <<-SHELL
     # sudo apt-get -y upgrade && \
     #sudo yum install vim -y
-	sudo yum install vim git tmux -y
+	sudo yum install vim git tmux screen -y
 	#sudo yum update -y --exclude=kernel*
     
 #      build-essential git pkg-config zip unzip software-properties-common \
@@ -93,4 +93,11 @@ config.vm.provision "shell", inline: <<-SHELL
 #    sudo pip install --upgrade pip
 #    sudo pip install --upgrade requests future cryptography pyopenssl ndg-httpsclient #pyasn1 nelson
   SHELL
+
+## playing around with autoscale
+#  config.vm.provider 'virtualbox' do |vb|
+#      vb.gui = true
+#      vb.customize ['setextradata', :id, 'GUI/ScaleFactor', '1.25']
+#    end
+
 end
