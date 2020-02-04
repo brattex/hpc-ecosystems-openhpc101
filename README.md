@@ -7,18 +7,36 @@
 <h3 id="an-introduction-to-openhpc-installation--configuration"><em>An Introduction to OpenHPC installation &amp; configuration</em></h3>
 <p>Bryan Johnston<br>
 20200203</p>
-<p>Keywords:</p>
-<ul>
-<li>OpenHPC</li>
-<li>HPC Ecosystems</li>
-<li>Virtual Lab</li>
-<li>Hands-on</li>
-</ul>
 <p><em>This guide was initially produced for  HPC Ecosystems sites.</em></p>
-<h2 id="quickstart">QUICKSTART</h2>
+<p>Keywords:</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenHPC</td>
+<td>HPC Ecosystems</td>
+<td>Virtual Lab</td>
+<td>Hands-on</td>
+</tr>
+<tr>
+<td>Virtual Cluster</td>
+<td>Introduction</td>
+<td>Guide</td>
+<td></td>
+</tr>
+</tbody>
+</table><h2 id="quickstart">QUICKSTART</h2>
 <p><a href="#bookmark=id.r5m2h0l5cm7x">Jump to the hands-on practical steps by clicking here.</a></p>
 <p>(if link does not work, scroll to “Install and prepare testbed VM through Vagrant”)</p>
-<h3 id="lab-preparation----introduction">LAB PREPARATION – INTRODUCTION</h3>
+<h3 id="virtual-lab-preparation----introduction">VIRTUAL LAB PREPARATION – INTRODUCTION</h3>
 <p>This section provides a step-by-step guide for  setting up the Virtual Lab environment. The Virtual Lab will configure <strong>three lightweight virtual machines</strong> that will be used to create a <strong>Virtual Cluster</strong> using the <strong>Virtualbox</strong> hypervisor.</p>
 <pre><code>!! IMPORTANT !!
 
