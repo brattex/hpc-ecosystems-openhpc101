@@ -14,7 +14,34 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
 
   config.vm.box = "bento/centos-7.7"
-  config.vm.box_version = "202001.16.0"
+  config.vm.box_version = "202002.04.0"  
+  config.vm.hostname = "ecosystems_sms"
+  
+  #config.vm.post_up_message = "HPC Ecosystems \r\n user:vagrant password:vagrant"
+  
+  #### MESSAGE_BEGIN
+  config.vm.post_up_message = <<-MESSAGE
+    Vagrant VM configuration complete!
+	
+      You now have a 3-node stellar cluster running within vagrant.
+
+    This includes the following vms:
+      - ecosystems_sms: the SMS host for OpenHPC (unless defined in setenv.c)
+	  
+      - core_vm2: a second stellar-core validator
+      - core_vm3: a third stellar-core validator
+
+    To see the logs for your new nodes run:
+        vagrant ssh <NODE> -c 'sudo tailf /var/log/upstart/stellar-core.log'
+
+    To query status (or other http endpoint commands) run:
+        vagrant ssh <NODE> -c 'curl http://localhost:39132/info'
+  
+    To access a ledger database run:
+        vagrant ssh <NODE> -c 'sudo -iustellar psql'
+
+  MESSAGE
+  #### MESSAGE_END
 	
   #config.vm.box = "bento/centos-7.6"
   #config.vm.box_version = "201812.27.0"
@@ -57,18 +84,20 @@ config.vm.network "private_network", ip: "10.10.10.10"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
-  # Example for VirtualBox:
-  #
-config.vm.provider "virtualbox" do |vb|
-  #   # Display the VirtualBox GUI when booting the machine
+  config.vm.provider "virtualbox" do |vb|
+    # Display the VirtualBox GUI when booting the machine
     vb.gui = true
-  #
-  #   # Customize the amount of memory on the VM:
+    # Customize the amount of memory on the VM:
     vb.memory = "1024"
+	# set the VM host to dual core
+	vb.cpus = 2
+		
+	# rename from default (containing folder+timestamp)
+	vb.name = "ecosystems_sms"
+	
+	# set host CPU cap to 50% of host machine
+	vb.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
   end
-  #
-  # View the documentation for the provider you are using for more
-  # information on available options.
 
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
@@ -78,21 +107,24 @@ config.vm.provider "virtualbox" do |vb|
   #   apt-get install -y apache2
   # SHELL
 
-config.vm.provision "shell", inline: <<-SHELL
-    # sudo apt-get -y upgrade && \
-    #sudo yum install vim -y
-	sudo yum install vim git tmux screen -y
+#  config.vm.provision "shell", inline: <<-SHELL
+#	sudo yum install vim git tmux screen -y
 	#sudo yum update -y --exclude=kernel*
     
-#      build-essential git pkg-config zip unzip software-properties-common \
-#      python-pip python-dev \
-#      libgmp-dev gcc-multilib valgrind openmpi-bin openmpi-doc libopenmpi-dev \
-#      portmap rpcbind libcurl4-openssl-dev bzip2 imagemagick libmagickcore-dev \
-#      libssl-dev libffi6 libffi-dev llvm
+	#      build-essential git pkg-config zip unzip software-properties-common \
+	#      python-pip python-dev \
+	#      libgmp-dev gcc-multilib valgrind openmpi-bin openmpi-doc libopenmpi-dev \
+	#      portmap rpcbind libcurl4-openssl-dev bzip2 imagemagick libmagickcore-dev \
+	#      libssl-dev libffi6 libffi-dev llvm
 
-#    sudo pip install --upgrade pip
-#    sudo pip install --upgrade requests future cryptography pyopenssl ndg-httpsclient #pyasn1 nelson
-  SHELL
+	#    sudo pip install --upgrade pip
+	#    sudo pip install --upgrade requests future cryptography pyopenssl ndg-httpsclient #pyasn1 nelson
+#  SHELL
+  # more tips: https://www.vagrantup.com/docs/provisioning/shell.html "heredoc"
+  config.vm.provision "shell" do |s|
+	s.inline = "sudo yum install vim git tmux screen -y"
+  end
+
 
 ## playing around with autoscale
 #  config.vm.provider 'virtualbox' do |vb|
