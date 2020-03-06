@@ -125,7 +125,26 @@ config.vm.network "private_network", ip: "10.10.10.10"
 	s.inline = "sudo yum install vim git tmux screen -y"
   end
 
+  config.vm.define "client01" do |client01|
+	client01.vm.hostname = "ecosystems_sms"
+	client01.vm.network "private_network", ip: "10.10.10.101"
+	
+	client01.vm.provider "virtualbox" do |vb|
+    # Display the VirtualBox GUI when booting the machine
+	  vb.gui = true
+    # Customize the amount of memory on the VM:
+      vb.memory = "512"
+	# set the VM host to dual core
+	  vb.cpus = 2
 
+	# rename from default (containing folder+timestamp)
+      vb.name = "client01"
+	
+	# set host CPU cap to 50% of host machine
+	  vb.customize ["modifyvm", :id, "--cpuexecutioncap", "25"]
+  end	
+	end #client01
+	
 ## playing around with autoscale
 #  config.vm.provider 'virtualbox' do |vb|
 #      vb.gui = true
