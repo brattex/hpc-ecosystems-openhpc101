@@ -1,21 +1,13 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# All Vagrant configuration is done below. The "2" in Vagrant.configure
-# configures the configuration version (we support older styles for
-# backwards compatibility). Please don't change it unless you know what
-# you're doing.
 Vagrant.configure("2") do |config|
-  # The most common configuration options are documented and commented below.
-  # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
-
-  # Every Vagrant development environment requires a box. You can search for
-  # boxes at https://vagrantcloud.com/search.
+  # https://vagrantcloud.com/search.
 
   config.vm.box = "bento/centos-7.7"
   config.vm.box_version = "202002.04.0"  
-  config.vm.hostname = "ecosystems_sms"
+  config.vm.hostname = "smshost"
   
   #config.vm.post_up_message = "HPC Ecosystems \r\n user:vagrant password:vagrant"
   
@@ -26,7 +18,7 @@ Vagrant.configure("2") do |config|
       You now have a 3-node stellar cluster running within vagrant.
 
     This includes the following vms:
-      - ecosystems_sms: the SMS host for OpenHPC (unless defined in setenv.c)
+      - smshost: the SMS host for OpenHPC (unless defined in setenv.c)
 	  
       - core_vm2: a second stellar-core validator
       - core_vm3: a third stellar-core validator
@@ -93,7 +85,7 @@ config.vm.network "private_network", ip: "10.10.10.10"
 	vb.cpus = 2
 		
 	# rename from default (containing folder+timestamp)
-	vb.name = "ecosystems_sms"
+	vb.name = "smshost"
 	
 	# set host CPU cap to 50% of host machine
 	vb.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
@@ -125,25 +117,51 @@ config.vm.network "private_network", ip: "10.10.10.10"
 	s.inline = "sudo yum install vim git tmux screen -y"
   end
 
-  config.vm.define "client01" do |client01|
-	client01.vm.hostname = "ecosystems_sms"
-	client01.vm.network "private_network", ip: "10.10.10.101"
+  # config.vm.define "client01" do |client01|
+  
+  
+	## configure only single NIC
+	# client01.vm.hostname = "client01"
+	# client01.vm.network "private_network", ip: "10.10.10.101"
 	
-	client01.vm.provider "virtualbox" do |vb|
-    # Display the VirtualBox GUI when booting the machine
-	  vb.gui = true
-    # Customize the amount of memory on the VM:
-      vb.memory = "512"
-	# set the VM host to dual core
-	  vb.cpus = 2
+	# client01.vm.provider "virtualbox" do |vb|
+    # # Display the VirtualBox GUI when booting the machine
+	  # vb.gui = true
+    # # Customize the amount of memory on the VM:
+      # vb.memory = "512"
+	# # set the VM host to dual core
+	  # vb.cpus = 2
 
-	# rename from default (containing folder+timestamp)
-      vb.name = "client01"
+	# # rename from default (containing folder+timestamp)
+      # vb.name = "client01"
 	
-	# set host CPU cap to 50% of host machine
-	  vb.customize ["modifyvm", :id, "--cpuexecutioncap", "25"]
-  end	
-	end #client01
+	# # set host CPU cap to 50% of host machine
+	  # vb.customize ["modifyvm", :id, "--cpuexecutioncap", "25"]
+  # end	
+  
+   # config.vm.post_up_message = <<-MESSAGE
+    # Vagrant VM configuration complete!
+	
+      # You now have a 3-node stellar cluster running within vagrant.
+
+    # This includes the following vms:
+      # - ecosystems_sms: the SMS host for OpenHPC (unless defined in setenv.c)
+	  
+      # - core_vm2: a second stellar-core validator
+      # - core_vm3: a third stellar-core validator
+
+    # To see the logs for your new nodes run:
+        # vagrant ssh <NODE> -c 'sudo tailf /var/log/upstart/stellar-core.log'
+
+    # To query status (or other http endpoint commands) run:
+        # vagrant ssh <NODE> -c 'curl http://localhost:39132/info'
+  
+    # To access a ledger database run:
+        # vagrant ssh <NODE> -c 'sudo -iustellar psql'
+
+  # MESSAGE
+  
+	# end #client01
 	
 ## playing around with autoscale
 #  config.vm.provider 'virtualbox' do |vb|
