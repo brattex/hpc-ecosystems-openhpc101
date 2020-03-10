@@ -1,3 +1,4 @@
+#https://alanbarber.com/post/how-to-customize-the-git-for-windows-bash-shell-prompt/
 if test -f /etc/profile.d/git-sdk.sh
 then
 	TITLEPREFIX=SDK-${MSYSTEM#MINGW}
