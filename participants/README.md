@@ -1,6 +1,6 @@
 # https://medium.com/@atulsingh0/git-use-sparse-checkout-pull-specific-folder-from-repository-1091b2da52bf
 
-# navigate to your preferred start location (e.g. ~/openhpc-handson/)
+navigate to your preferred start location (e.g. ~/openhpc-handson/)
 mkdir ~/openhpc-handson
 cd ~/openhpc-handson
 git init
