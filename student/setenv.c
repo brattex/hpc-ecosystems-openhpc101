@@ -35,5 +35,5 @@ c_name[2]=compute02
 ###################################################################
 compute_regex=compute*
 compute_prefix=
-iso_path=/root
+iso_path=/vagrant
 synclist=""
