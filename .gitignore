@@ -4,6 +4,9 @@
 # Install guides for OpenHPC
 Install_guide-*
 
+# .bak files
+*.bak
+
 # ISO files
 *.iso
 
