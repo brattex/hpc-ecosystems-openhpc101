@@ -37,3 +37,6 @@ compute_regex=compute*
 compute_prefix=
 iso_path=/vagrant
 synclist=""
+###################################################################
+# optional extras
+nagios_web_password=nagiospw
