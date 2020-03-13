@@ -4,6 +4,9 @@
 # Install guides for OpenHPC
 Install_guide-*
 
+# ISO files
+*.iso
+
 # OpenHPC Client VMs
 openhpc\ client\ vms/OpenHPC\ Client\ 1/
 openhpc\ client\ vms/OpenHPC\ Client\ 2/
