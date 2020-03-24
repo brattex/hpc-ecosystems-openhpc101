@@ -34,7 +34,7 @@ c_mac[2]=00:26:6C:FD:80:08
 c_name[2]=compute02
 ###################################################################
 compute_regex=compute*
-compute_prefix=
+compute_prefix=compute
 iso_path=/vagrant
 synclist=""
 ###################################################################
